@@ -7,10 +7,12 @@ public class Recette {
 	public int nb_etapes;
 	public ArrayList<Etape> list_etapes;
 	public String nom;
+	public String saveur;
+
 	
-	
-	public Recette(String nom) {
+	public Recette(String nom, String s) {
 		this.nom=nom;
+		this.saveur = s;
 		this.list_ingredients = new ArrayList();
 		this.list_etapes=new ArrayList();
 		this.nb_etapes=0;
@@ -28,6 +30,5 @@ public class Recette {
 		this.nb_etapes+=1;
 		
 	}
-	
 	
 }
