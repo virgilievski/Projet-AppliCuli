@@ -1,6 +1,7 @@
 package Vu;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -27,7 +28,10 @@ public class Appli_Stage extends Application{
         Scene scene= new Scene(layoutroot,800,600);
         primaryStage.setScene(scene);
         HBox hbox1=new HBox();
+        hbox1.setPadding(new Insets(10));
+        hbox1.setSpacing(10);
         Label nom= new Label("Barre de recherche");
+        nom.setPadding(new Insets(5));
         TextField recherche= new TextField();
         Button rechercher=new Button("Rechercher");
         hbox1.getChildren().addAll(nom,recherche,rechercher);
