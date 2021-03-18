@@ -1,6 +1,12 @@
 package Vu;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class Appli_Stage extends Application{
@@ -14,9 +20,18 @@ public class Appli_Stage extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		primaryStage.setWidth(1024);
-        primaryStage.setHeight(968);
+		primaryStage.setWidth(800);
+        primaryStage.setHeight(600);
         primaryStage.setTitle("Le livre de recette");
+        BorderPane layoutroot=new BorderPane();
+        Scene scene= new Scene(layoutroot,800,600);
+        primaryStage.setScene(scene);
+        HBox hbox1=new HBox();
+        Label nom= new Label("Barre de recherche");
+        TextField recherche= new TextField();
+        Button rechercher=new Button("Rechercher");
+        hbox1.getChildren().addAll(nom,recherche,rechercher);
+        layoutroot.setTop(hbox1);
         primaryStage.show();
 	}
 
