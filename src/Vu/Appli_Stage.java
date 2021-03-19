@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Appli_Stage extends Application{
@@ -27,6 +28,8 @@ public class Appli_Stage extends Application{
         BorderPane layoutroot=new BorderPane();
         Scene scene= new Scene(layoutroot,800,600);
         primaryStage.setScene(scene);
+        
+        // Insertion de la barre de recherche
         HBox hbox1=new HBox();
         hbox1.setPadding(new Insets(10));
         hbox1.setSpacing(10);
@@ -36,6 +39,12 @@ public class Appli_Stage extends Application{
         Button rechercher=new Button("Rechercher");
         hbox1.getChildren().addAll(nom,recherche,rechercher);
         layoutroot.setTop(hbox1);
+        
+        //Insertion des images-liens vers les recettes à la une
+        VBox vbox2 = new VBox(8);
+        vbox2.getChildren().addAll(new Label("Recettes à la une"), new Button("recette suivante")); //le bouton servira à passer à la recette suivante des recette à la une. On fait tourner 4/5 recettes.
+        layoutroot.setCenter(vbox2);
+        
         primaryStage.show();
 	}
 
