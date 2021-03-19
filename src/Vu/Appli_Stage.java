@@ -54,6 +54,7 @@ public class Appli_Stage extends Application{
         
         Livre livreRecete = new Livre();
         Recette choucrouteMelba= new Recette("Choucroute Melba","Sucré Salée");
+        Recette couscous = new Recette("Couscous", "salé");
         
 	}
 
