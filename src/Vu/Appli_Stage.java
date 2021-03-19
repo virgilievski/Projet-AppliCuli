@@ -1,11 +1,14 @@
 package Vu;
 
+import Modele.Livre;
+import Modele.Recette;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -28,7 +31,7 @@ public class Appli_Stage extends Application{
         BorderPane layoutroot=new BorderPane();
         Scene scene= new Scene(layoutroot,800,600);
         primaryStage.setScene(scene);
-        
+        primaryStage.getIcons().add(new Image("Image/icon.jpg"));
         // Insertion de la barre de recherche
         HBox hbox1=new HBox();
         hbox1.setPadding(new Insets(10));
@@ -46,6 +49,12 @@ public class Appli_Stage extends Application{
         layoutroot.setCenter(vbox2);
         
         primaryStage.show();
+        
+        
+        
+        Livre livreRecete = new Livre();
+        Recette choucrouteMelba= new Recette("Choucroute Melba","Sucré Salée");
+        
 	}
 
 }

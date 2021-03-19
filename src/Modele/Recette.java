@@ -8,6 +8,7 @@ public class Recette {
 	public ArrayList<Etape> list_etapes;
 	public String nom;
 	public String saveur;
+	public String photo; 
 
 	
 	public Recette(String nom, String s) {
