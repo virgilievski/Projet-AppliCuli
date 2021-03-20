@@ -13,8 +13,9 @@ public class Livre {
 		this.nb_recettes=0;
 	}
 	
-	public void ajoutRecette(Integer ID_recette, Recette r) {
-		this.dico_recettes.put(ID_recette, r);
+	public void ajoutRecette(Recette r) {
 		this.nb_recettes+=1;
+		this.dico_recettes.put(this.nb_recettes, r);
+		r.id=this.nb_recettes;
 	}
 }

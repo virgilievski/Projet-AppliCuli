@@ -9,6 +9,8 @@ public class Recette {
 	public String nom;
 	public String saveur;
 	public String photo; 
+	public int id;
+	
 
 	
 	public Recette(String nom, String s) {
@@ -18,6 +20,7 @@ public class Recette {
 		this.list_etapes=new ArrayList();
 		this.nb_etapes=0;
 		this.list_ingredients=new ArrayList();
+		
 		
 				
 	}

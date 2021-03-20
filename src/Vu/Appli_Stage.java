@@ -52,10 +52,13 @@ public class Appli_Stage extends Application{
         
         
         
-        Livre livreRecete = new Livre();
+        Livre livreRecette = new Livre();
         Recette choucrouteMelba= new Recette("Choucroute Melba","Sucré Salée");
         Recette couscous = new Recette("Couscous", "salé");
-        
+        livreRecette.ajoutRecette(choucrouteMelba);
+        livreRecette.ajoutRecette(couscous);
+        System.out.print(choucrouteMelba.id);
+        System.out.print(couscous.id);
 	}
 
 }
