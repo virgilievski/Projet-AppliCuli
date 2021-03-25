@@ -1,10 +1,12 @@
 package Modele;
 
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Recette {
-	public ArrayList<Ingredient> list_ingredients;
-	public int nb_etapes;
+	public Set<Ingredient> list_ingredients; 
+	
 	public ArrayList<Etape> list_etapes;
 	public String nom;
 	public String saveur;
@@ -16,10 +18,10 @@ public class Recette {
 	public Recette(String nom, String s) {
 		this.nom=nom;
 		this.saveur = s;
-		this.list_ingredients = new ArrayList();
+		this.list_ingredients = new TreeSet();
 		this.list_etapes=new ArrayList();
-		this.nb_etapes=0;
-		this.list_ingredients=new ArrayList();
+		
+		
 		
 		
 				
@@ -31,7 +33,7 @@ public class Recette {
 	}
 	public void Ajout_etapes( Etape e) {
 		this.list_etapes.add(e);
-		this.nb_etapes+=1;
+		
 		
 	}
 	
