@@ -1,2 +1,0 @@
-LE FICHIER TEXTE A REMPLIR DE RECETTE
-faire un parssing

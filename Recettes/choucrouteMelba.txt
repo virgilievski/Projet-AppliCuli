@@ -1,0 +1,4 @@
+"Choucroute Melba","Sucré Salée"
+("saucisse","ail","choux","pêche", "pomme de terre")
+("cuire les pommes de terre","faire revenir l'ail", "découper la saucisse", "cuire la saucisse à la poele", "ajouter la saucisse", "l'ail et le choux dans une marmitte","cuire 20min", "ajouter les pêches dénoyautées", "servir avec une boule de glace")
+"Image/choucroutemelba.jpg"
