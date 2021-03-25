@@ -19,12 +19,7 @@ public class Recette {
 		this.nom=nom;
 		this.saveur = s;
 		this.list_ingredients = new TreeSet();
-		this.list_etapes=new ArrayList();
-		
-		
-		
-		
-				
+		this.list_etapes=new ArrayList();			
 	}
 	
 	public void Ajout_ingredient(Ingredient ing) {
