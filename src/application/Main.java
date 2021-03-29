@@ -32,8 +32,14 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		
 		Livre bible = new Livre();
 		File tiramisu = new File("Recettes/tiramisu.txt");
-		bible.fileToRecette(tiramisu);
+		Stage bien = new Stage();
+		System.out.println("oui");
+		
+		//bible.fileToRecette(tiramisu);
 	}
+	
+	
 }
