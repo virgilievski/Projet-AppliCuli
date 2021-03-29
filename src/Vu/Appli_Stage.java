@@ -1,5 +1,7 @@
 package Vu;
 
+import java.io.File;
+
 import Modele.Livre;
 import Modele.Recette;
 import javafx.application.Application;
@@ -26,6 +28,7 @@ public class Appli_Stage extends Application{
 	@Override
 	public void start(Stage primaryStage)  {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		/*primaryStage.setWidth(800);
         primaryStage.setHeight(600);
         primaryStage.setTitle("Le livre de recette");
@@ -69,6 +72,11 @@ public class Appli_Stage extends Application{
         Recette couscous = new Recette("Couscous", "salé");
         livreRecette.ajoutRecette(choucrouteMelba);
         livreRecette.ajoutRecette(couscous);
+=======
+		Livre bible = new Livre();
+		File tiramisu = new File("Recettes/tiramisu.txt");
+		bible.parsingmaison(tiramisu);
+>>>>>>> 16a1da6a62eb9b218ff2a3772ff5295365e38897
 	}
 
 }
