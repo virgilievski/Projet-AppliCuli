@@ -27,9 +27,6 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 
-		Livre bible = new Livre();
-		File tiramisu = new File("Recettes/tiramisu.txt");
-		bible.parsingmaison(tiramisu);
 
 	}
 	
@@ -37,6 +34,6 @@ public class Main extends Application {
 		launch(args);
 		Livre bible = new Livre();
 		File tiramisu = new File("Recettes/tiramisu.txt");
-		bible.parsingmaison(tiramisu);
+		bible.fileToRecette(tiramisu);
 	}
 }

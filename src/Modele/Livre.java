@@ -24,7 +24,7 @@ public class Livre {
 		this.dico_recettes.put(this.nb_recettes, r);
 		r.id=this.nb_recettes;
 	}
-	public void parsingmaison(File fichier){
+	public void fileToRecette(File fichier){
 		try
 		{
   
