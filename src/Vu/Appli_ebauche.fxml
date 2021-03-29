@@ -100,20 +100,20 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <TextField layoutX="476.0" layoutY="23.0" />
+                        <TextField layoutX="476.0" layoutY="23.0" prefHeight="26.0" prefWidth="153.0" />
                         <ImageView fitHeight="37.0" fitWidth="42.0" layoutX="434.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@kisspng-computer-icons-magnifying-glass-clip-art-find-5b0521fea0d664.png" />
+                              <Image url="@../Image/loupe_recherche.png" />
                            </image>
                         </ImageView>
-                        <TextArea blendMode="DARKEN" editable="false" layoutY="2.0" prefHeight="79.0" prefWidth="199.0" style="-fx-background-color: darken;" text="Recettes" wrapText="true" AnchorPane.bottomAnchor="-11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="2.0">
+                        <TextArea blendMode="DARKEN" layoutX="-2.0" layoutY="-2.0" prefHeight="79.0" prefWidth="199.0" style="-fx-background-color: darken;" text="Recettes" wrapText="true" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="441.0" AnchorPane.topAnchor="-2.0">
                            <font>
-                              <Font name="Corbel Bold Italic" size="40.0" />
+                              <Font size="30.0" />
                            </font>
                         </TextArea>
                         <ImageView fitHeight="62.0" fitWidth="83.0" layoutX="197.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;">
                            <image>
-                              <Image url="@../../../../livres.png" />
+                              <Image url="@../Image/livres.png" />
                            </image>
                         </ImageView>
                      </children>
