@@ -1,5 +1,8 @@
 package application;
 	
+import java.io.File;
+
+import Modele.Livre;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -20,6 +23,10 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		Livre bible = new Livre();
+		File tiramisu = new File("Recettes/tiramisu.txt");
+		bible.parsingmaison(tiramisu);
+
 	}
 	
 	public static void main(String[] args) {
