@@ -44,13 +44,13 @@ public class Recette {
 	}
 
 	public static void main(String args[]){
-		
+		try
 		{
-		// Le fichier d'entrée
+		// Le fichier d'entrÃ©e
 		File file = new File("Recettes/choucrouteMelba.txt");    
-		// Créer l'objet File Reader
+		// CrÃ©er l'objet File Reader
 		FileReader fr = new FileReader(file);  
-		// Créer l'objet BufferedReader        
+		// CrÃ©er l'objet BufferedReader        
 		BufferedReader br = new BufferedReader(fr);  
 		StringBuffer sb = new StringBuffer();    
 		String line;
