@@ -3,6 +3,7 @@ package Vu;
 import Modele.Livre;
 import Modele.Recette;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,9 +24,9 @@ public class Appli_Stage extends Application{
 	}
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage)  {
 		// TODO Auto-generated method stub
-		primaryStage.setWidth(800);
+		/*primaryStage.setWidth(800);
         primaryStage.setHeight(600);
         primaryStage.setTitle("Le livre de recette");
         BorderPane layoutroot=new BorderPane();
@@ -47,8 +48,19 @@ public class Appli_Stage extends Application{
         VBox vbox2 = new VBox(8);
         vbox2.getChildren().addAll(new Label("Recettes à la une"), new Button("recette suivante")); //le bouton servira à passer à la recette suivante des recette à la une. On fait tourner 4/5 recettes.
         layoutroot.setCenter(vbox2);
+        */
+		try {
+			VBox root =(VBox) FXMLLoader.load(getClass().getResource("Appli_ebauche.fxml"));
+			Scene scene= new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			
+		}
         
-        primaryStage.show();
         
         
         
