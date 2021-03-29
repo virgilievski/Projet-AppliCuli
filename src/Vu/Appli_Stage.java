@@ -57,8 +57,6 @@ public class Appli_Stage extends Application{
         Recette couscous = new Recette("Couscous", "salé");
         livreRecette.ajoutRecette(choucrouteMelba);
         livreRecette.ajoutRecette(couscous);
-        System.out.print(choucrouteMelba.id);
-        System.out.print(couscous.id);
 	}
 
 }
