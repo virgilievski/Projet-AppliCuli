@@ -35,14 +35,30 @@ public class Livre {
 		String nom = null;
 		String saveur = null;
 		Recette r = new Recette(nom, saveur);
+		int i=0;
 		while((line = br.readLine()) != null) {
 		        // ajoute la ligne au buffer
-		        sb.append(line);   
-		        sb.append("\n");     
+		        sb.append(line);      
+		        sb.append("\n");    
+		        if (i==0) {
+		        	r.nom=line.toString();
 		      }
+		        if(i==1) {
+		        	r.saveur=line.toString();
+		        }
+		        if(i==2) {
+		        	r.list_ingredients=line.
+		        }
+		        if(i==3) {
+		        	r.list_etapes=line.
+		        }
+		        if(i==4) {
+		        	r.photo=line.toString();
+		        }
+		}
 		      fr.close();    
 		      System.out.println("Contenu du fichier: ");
-		      System.out.println(sb);  
+		      System.out.println(sb.toString());  
 		    }
 		    catch(IOException e)
 		    {
