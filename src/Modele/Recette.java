@@ -11,13 +11,11 @@ import java.io.IOException;
 
 public class Recette {
 	public Set<Ingredient> list_ingredients; 
-	
 	public ArrayList<Etape> list_etapes;
 	public String nom;
 	public String saveur;
 	public String photo; 
 	public int id;
-	
 
 	
 	public Recette(String nom, String s) {
@@ -26,6 +24,13 @@ public class Recette {
 		this.list_ingredients = new TreeSet();
 		this.list_etapes=new ArrayList();
 				
+	}
+	public Recette() {
+		this.nom=null;
+		this.saveur=null;
+		this.photo=null;
+		this.list_ingredients=null;
+		this.list_etapes=null;
 	}
 	
 	public void Ajout_ingredient(Ingredient ing) {

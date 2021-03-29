@@ -14,5 +14,10 @@ public class Ingredient {
 		this.mesure = m;
 
 	}
+	public Ingredient() {
+		this.nom =null;
+		this.quantite=0;
+		this.mesure=null;
+	}
 
 }

@@ -3,12 +3,16 @@ package Modele;
 public class Etape {
 	public int numéro;
 	public String instructions;
-	public Ingredient ingrédients;
+
 	
-	public Etape(int n, String i, Ingredient in) {
+	public Etape(int n, String i) {
 		this.numéro=n;
 		this.instructions=i;
-		this.ingrédients=in;
+
+	}
+	public Etape() {
+		this.numéro=0;
+		this.instructions=null;
 	}
 	
 
