@@ -26,13 +26,17 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+
+		Livre bible = new Livre();
+		File tiramisu = new File("Recettes/tiramisu.txt");
+		bible.parsingmaison(tiramisu);
+
 	}
 	
 	public static void main(String[] args) {
 		launch(args);
 		Livre bible = new Livre();
 		File tiramisu = new File("Recettes/tiramisu.txt");
-		bible.creationRecette(tiramisu);
+		bible.parsingmaison(tiramisu);
 	}
 }
