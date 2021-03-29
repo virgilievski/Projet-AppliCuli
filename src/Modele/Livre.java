@@ -37,7 +37,7 @@ public class Livre {
 		Recette r = new Recette(nom, saveur);
 		while((line = br.readLine()) != null) {
 		        // ajoute la ligne au buffer
-		        sb.append(line);      
+		        sb.append(line);   
 		        sb.append("\n");     
 		      }
 		      fr.close();    
