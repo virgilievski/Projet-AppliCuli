@@ -2,12 +2,15 @@ package Modele;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -69,4 +72,24 @@ public class Livre {
 		      e.printStackTrace();
 		    }
 		  }
+	public void recetteToFile(Recette r) throws FileNotFoundException {
+		String nom = r.nom;
+		String chemin = "Recettes/"+nom+".txt";
+		File f = new File(chemin);
+		PrintWriter writer = new PrintWriter(chemin);
+		writer.println(r.nom);
+		writer.println(r.saveur);
+	    Iterator it0 = r.list_ingredients.iterator();
+	    while(it0.hasNext()) {
+	       writer.print(it0.next()+"/");
+		}
+	    writer.println();
+	    Iterator it1 = r.list_etapes.iterator();
+	    while(it1.hasNext()) {
+	    	writer.print(it1.next()+"/");
+	    }
+	    writer.println();
+	    writer.print(r.photo);
+		writer.close();
+	}
 }
