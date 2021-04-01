@@ -23,6 +23,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(new Image("Image/icon.jpg"));
 			primaryStage.show();
+			primaryStage.setTitle("Culinarium");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -35,7 +36,6 @@ public class Main extends Application {
 		
 		Livre bible = new Livre();
 		File tiramisu = new File("Recettes/tiramisu.txt");
-		Stage bien = new Stage();
 		System.out.println("oui");
 		
 		//bible.fileToRecette(tiramisu);
