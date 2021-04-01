@@ -31,13 +31,12 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		Livre bible = new Livre();
+		
 		launch(args);
 		
-		Livre bible = new Livre();
-		File tiramisu = new File("Recettes/tiramisu.txt");
-		Stage bien = new Stage();
-		System.out.println("oui");
 		
+		File tiramisu = new File("Recettes/tiramisu.txt");
 		//bible.fileToRecette(tiramisu);
 	}
 	
