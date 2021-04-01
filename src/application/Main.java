@@ -36,9 +36,11 @@ public class Main extends Application {
 		
 		Livre bible = new Livre();
 		File tiramisu = new File("Recettes/tiramisu.txt");
+
 		System.out.println("oui");
+
 		
-		//bible.fileToRecette(tiramisu);
+		bible.fileToRecette(tiramisu);
 	}
 	
 	
