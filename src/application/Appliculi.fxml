@@ -16,7 +16,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField layoutX="436.0" layoutY="36.0" />
+                  <TextField layoutX="436.0" layoutY="36.0" prefHeight="26.0" prefWidth="147.0" />
                   <ImageView fitHeight="46.0" fitWidth="45.0" layoutX="391.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Image/loupe_recherche.png" />
