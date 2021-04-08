@@ -1,5 +1,6 @@
 package application;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import Modele.*;
@@ -22,8 +23,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class SampleController {
-		public Button next=null;
 		
+		public Button next = null;
 		public TextArea texteera = null;	
 		public Label label=null; 
 		public Livre livre;
@@ -44,18 +45,27 @@ public class SampleController {
 	       newStageRecette.showAndWait();
 	       newStageRecette.setTitle("New Recipe");
 	    }
-	   public void Save() {
-		   System.out.print(label.getText().equals("Nom de votre Recette :"));
+	   public void Save() throws FileNotFoundException {
+		   
 		   if (label.getText().equals("Nom de votre Recette :") ){
 			   
-			   
+			   texteera.setText("");
 			   this.r.nom=texteera.getText();
 			   label.setText("Saveur");
 			 
 		   }
 		   if (label.getText().equals("Saveur")) {
+			   texteera.setText("");
 			   this.r.saveur=texteera.getText();
+			   next.setText("Enregistrer");
 			   
+			   
+		   }
+		   if (label.getText().equals("Enregistrer")) {
+			   this.livre.ajoutRecette(r);
+			   this.livre.recetteToFile(r);
+			   
+			   texteera.setText("");
 		   }
 		   
 		   
