@@ -28,7 +28,7 @@ public class SampleController {
 		public Label label=null; 
 		public Livre livre;
 		public Recette r;
-   
+		
 	public SampleController() {
 		this.livre= new Livre();
 		this.r=new Recette();
