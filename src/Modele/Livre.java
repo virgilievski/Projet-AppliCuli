@@ -92,4 +92,17 @@ public class Livre {
 	    writer.print(r.photo);
 		writer.close();
 	}
+	
+	public ArrayList<Recette>  alaUne() {
+		ArrayList tab = new ArrayList<Recette>();
+		
+		if (this.nb_recettes>3) {
+			for (int i=0;i<3;i+=1) {
+				tab.add(this.dico_recettes.get(this.nb_recettes-i));
+				
+			}
+				
+		}
+		return tab;
+	}
 }

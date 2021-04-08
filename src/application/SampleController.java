@@ -22,33 +22,40 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class SampleController {
-		public Button save=null;
-		public CheckBox bien = null;
-		public TextField indic = null;	
-		public TextArea edit =null;
+		public Button next=null;
+		
+		public TextArea texteera = null;	
+		public Label label=null; 
 		public Livre livre;
-		public Recette r=new Recette();
+		public Recette r;
    
-
+	public SampleController() {
+		this.livre= new Livre();
+		this.r=new Recette();
+	}
 	   public void ouvrirNew(ActionEvent event) throws IOException {
 	       Stage newStageRecette = new Stage();
 	       newStageRecette.initModality(Modality.APPLICATION_MODAL);
-	       TabPane root = (TabPane)FXMLLoader.load(getClass().getResource("StageNewReccette.fxml"));
+	       AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("StageNewReccette.fxml"));
 	        
 	       
 	       Scene a= new Scene(root);
 	       newStageRecette.setScene(a);
 	       newStageRecette.showAndWait();
-	       System.out.print(r.nom);
+	       newStageRecette.setTitle("New Recipe");
 	    }
 	   public void Save() {
-		   
-		   if (indic.getText().equals("Nom de la Recette") ){
+		   System.out.print(label.getText().equals("Nom de votre Recette :"));
+		   if (label.getText().equals("Nom de votre Recette :") ){
 			   
 			   
-			   this.r.nom=edit.getText();
-			   
+			   this.r.nom=texteera.getText();
+			   label.setText("Saveur");
 			 
+		   }
+		   if (label.getText().equals("Saveur")) {
+			   this.r.saveur=texteera.getText();
+			   
 		   }
 		   
 		   
