@@ -45,7 +45,7 @@ public class SampleController {
 	       newStageRecette.showAndWait();
 	       newStageRecette.setTitle("New Recipe");
 	    }
-	   public void Save() throws FileNotFoundException {
+	   public void Save() throws IOException {
 		   
 		   if (label.getText().equals("Nom de votre Recette :") ){
 			   
@@ -63,7 +63,7 @@ public class SampleController {
 		   }
 		   if (label.getText().equals("Enregistrer")) {
 			   this.livre.ajoutRecette(r);
-			   this.livre.recetteToFile(r);
+			   this.r.recetteToFile();
 			   
 			   texteera.setText("");
 		   }

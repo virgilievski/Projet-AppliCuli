@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Recette {
 	public Set<Ingredient> list_ingredients; 
@@ -39,6 +41,26 @@ public class Recette {
 	public void Ajout_etapes( Etape e) {
 		this.list_etapes.add(e);
 			
+	}
+	public void recetteToFile() throws IOException {
+		String nom = this.nom;
+		String chemin = "AppliCuli/Recettes/"+nom+".txt";
+		File f = new File(chemin);
+		PrintWriter writer = new PrintWriter(chemin);
+		writer.println(this.nom);
+		writer.println(this.saveur);
+	    Iterator<Ingredient> it0 = this.list_ingredients.iterator();
+	    while(it0.hasNext()) {
+	       writer.print(it0.next()+"/");
+		}
+	    writer.println();
+	    Iterator<Etape> it1 = this.list_etapes.iterator();
+	    while(it1.hasNext()) {
+	    	writer.print(it1.next()+"/");
+	    }
+	    writer.println();
+	    writer.print(this.photo);
+		writer.close();
 	}
 
 
