@@ -5,8 +5,9 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="802.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -31,5 +32,37 @@
       </MenuBar>
       <TextField layoutX="28.0" layoutY="52.0" />
       <Button layoutX="189.0" layoutY="52.0" mnemonicParsing="false" text="Rechercher" textFill="#0720e3" />
+      <ImageView fitHeight="174.0" fitWidth="462.0" layoutX="170.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/bienvenue.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="109.0" layoutY="354.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="158.0" textFill="#fd0b0b">
+         <graphic>
+            <ImageView fitHeight="117.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/new.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="337.0" layoutY="344.0" mnemonicParsing="false">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/livre%20rectte.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="508.0" layoutY="391.0" mnemonicParsing="false">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/composer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
