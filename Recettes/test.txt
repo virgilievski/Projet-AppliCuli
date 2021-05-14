@@ -1,5 +1,0 @@
-pates Bolognaise
-salé
-Modele.Ingredient@36d64342/Modele.Ingredient@7f63425a/
-Modele.Etape@511baa65/Modele.Etape@340f438e/Modele.Etape@30c7da1e/
-chemin/vers/photo/bolo

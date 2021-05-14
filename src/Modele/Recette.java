@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Recette {
 	public Set<Ingredient> list_ingredients; 
@@ -45,23 +46,26 @@ public class Recette {
 	}
 	public void recetteToFile() throws IOException {
 		String nom = this.nom;
-		String chemin = "AppliCuli/Recettes/"+nom+".txt";
-		File f = new File("/home/virgilo/eclipse-workspace/AppliCuli/Recettes/test.txt");
+		String rep = "Recettes";
+		File file = new File(rep);
+		String chemin = file.getAbsolutePath()+"/"+nom+".txt";
+		File f = new File(chemin);
 		if (!f.exists()) {
 			try {
 				f.createNewFile();
 				
-				PrintWriter writer = new PrintWriter("/home/virgilo/eclipse-workspace/AppliCuli/Recettes/test.txt");
+				PrintWriter writer = new PrintWriter(chemin);
 				writer.println(this.nom);
 				writer.println(this.saveur);
 			    Iterator<Ingredient> it0 = this.list_ingredients.iterator();
 			    while(it0.hasNext()) {
-			       writer.print(it0.next().toString()+"/");
+			    	Ingredient h = it0.next();
+			       writer.print(h.nom+","+h.quantite+","+h.mesure+"/");
 				}
 			    writer.println();
 			    Iterator<Etape> it1 = this.list_etapes.iterator();
 			    while(it1.hasNext()) {
-			    	writer.print(it1.next().toString()+"/");
+			    	writer.print(it1.next().instructions+"/");
 			    }
 			    writer.println();
 			    writer.print(this.photo);
