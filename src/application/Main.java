@@ -4,6 +4,14 @@ package application;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import Modele.Etape;
 import Modele.Ingredient;
@@ -55,7 +63,7 @@ public class Main extends Application {
 		pates_bolo.Ajout_ingredient(bolo);
 		pates_bolo.photo = "chemin/vers/photo/bolo";
 		pates_bolo.recetteToFile();
-	
+
 	}
 	
 	
