@@ -55,6 +55,7 @@ public class Main extends Application {
 		pates_bolo.Ajout_ingredient(bolo);
 		pates_bolo.photo = "chemin/vers/photo/bolo";
 		pates_bolo.recetteToFile();
+		
 	
 	}
 	
