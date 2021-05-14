@@ -74,11 +74,11 @@ public class Livre {
 		  }
 	
 	public ArrayList<Recette>  alaUne() {
-		ArrayList tab = new ArrayList<Recette>();
+		ArrayList<Recette> tab = new ArrayList<Recette>();
 		
-		if (this.nb_recettes>3) {
-			for (int i=0;i<3;i+=1) {
-				tab.add(this.dico_recettes.get(this.nb_recettes-i));
+		if (this.nb_recettes>5) {
+			for (int i=0;i<5;i+=1) {
+				tab.add(this.dico_recettes.get(this.nb_recettes-1-i));
 				
 			}
 				
