@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import Modele.*;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -43,8 +44,8 @@ public class SampleController {
 	       Scene a= new Scene(root);
 	       newStageRecette.setScene(a);
 	       newStageRecette.showAndWait();
-	       newStageRecette.setTitle("New Recipe");
-	    }
+	       newStageRecette.setTitle("New Recipe"); 
+	    } 
 	   public void Save() throws IOException {
 		   
 		   if (label.getText().equals("Nom de votre Recette :") ){
@@ -70,5 +71,8 @@ public class SampleController {
 		   
 		   
 	   }
+		   
+		   
+	    
 	}
 
