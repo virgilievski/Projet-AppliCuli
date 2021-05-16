@@ -57,10 +57,10 @@ public class Livre {
 
 	    String[] partsEtap = br.readLine().toString().split("/");
 	    for(int j=0; j<partsEtap.length; j++) {
-	        Etape eta = new Etape();
-	        eta.numéro=j+1;		
-	        eta.instructions=partsEtap[j];
-	        r.list_etapes.add(j, eta);;
+	        
+	        		
+	        
+	        r.list_etapes.add(partsEtap[j]);;
 		    }
 	     
 	    r.photo = br.readLine().toString();

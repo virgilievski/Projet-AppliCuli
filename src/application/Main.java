@@ -51,9 +51,9 @@ public class Main extends Application {
 		Recette pates_bolo = new Recette();
 		pates_bolo.nom = "pates Bolognaise";
 		pates_bolo.saveur = "salé";
-		Etape bouillir = new Etape(1, "faire bouillir les pates");
-		Etape cuire = new Etape(2, "chauffer la sauce bolognaise dans une poele");
-		Etape fin = new Etape(3, "verser les pates dans la poele");
+		String bouillir =  "faire bouillir les pates";
+		String cuire = "chauffer la sauce bolognaise dans une poele";
+		String fin =  "verser les pates dans la poele";
 		pates_bolo.Ajout_etapes(bouillir);
 		pates_bolo.Ajout_etapes(cuire);
 		pates_bolo.Ajout_etapes(fin);

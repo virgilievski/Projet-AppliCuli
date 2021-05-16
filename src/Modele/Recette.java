@@ -16,7 +16,7 @@ import java.nio.file.Path;
 
 public class Recette {
 	public Set<Ingredient> list_ingredients; 
-	public ArrayList<Etape> list_etapes;
+	public ArrayList<String> list_etapes;
 	public String nom;
 	public String saveur;
 	public String photo; 
@@ -40,7 +40,7 @@ public class Recette {
 		this.list_ingredients.add(ing);
 		
 	}
-	public void Ajout_etapes( Etape e) {
+	public void Ajout_etapes( String e) {
 		this.list_etapes.add(e);
 			
 	}
@@ -63,9 +63,9 @@ public class Recette {
 			       writer.print(h.nom+","+h.quantite+","+h.mesure+"/");
 				}
 			    writer.println();
-			    Iterator<Etape> it1 = this.list_etapes.iterator();
+			    Iterator<String> it1 = this.list_etapes.iterator();
 			    while(it1.hasNext()) {
-			    	writer.print(it1.next().instructions+"/");
+			    	writer.print(it1.next()+"/");
 			    }
 			    writer.println();
 			    writer.print(this.photo);

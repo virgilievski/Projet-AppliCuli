@@ -3,6 +3,9 @@ package application;
 import java.io.FileNotFoundException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import Modele.*;
 import javafx.event.ActionEvent;
@@ -29,12 +32,16 @@ public class SampleController {
 	@FXML private Button nr;
 	@FXML private Button lbr;
 		 
-		public Livre livre;
-		public Recette r;
-		
+	public Livre livre;
+	public Recette r;
+	public ArrayList listEtape;
+	public Set<Ingredient> listIngr;
+	
 	public SampleController() {
 		this.livre= new Livre();
 		this.r=new Recette();
+		this.listEtape= new ArrayList();
+		this.listIngr= new HashSet(); 
 	}
 	   public void pageCreation(ActionEvent event) throws IOException {
 	       Stage newStageRecette = new Stage();
@@ -52,27 +59,50 @@ public class SampleController {
 	   @FXML private TextField nom;
 	   @FXML private TextField saveur;
 	   @FXML private TextField image;
-	   
-	   public void save(ActionEvent event) throws IOException {
-		   this.r.nom = nom.getText();
-		   this.r.saveur = saveur.getText();
-		   this.r.photo = image.getText();
-		   
-		   
-		  // this.r.recetteToFile();
-	   }
-	   
 	   @FXML private TextField ingredients;
 	   @FXML private TextField etapes;
 	   @FXML private Button etplus;
 	   @FXML private Button ingplus;
+	   @FXML private TextField mesure;
+	   @FXML private TextField quantite;
+	   public void save(ActionEvent event) throws IOException {
+		   
+		   this.r.nom = nom.getText();
+		   this.r.saveur = saveur.getText();
+		   this.r.photo = image.getText();
+		   if (!etapes.getText().isEmpty()){
+			   this.listEtape.add(etapes.getText());
+		   }
+		   if (!ingredients.getText().isEmpty()) {
+			   ingplus(event);
+		   }
+		   this.r.list_ingredients=this.listIngr;
+		   this.r.list_etapes=this.listEtape;
+		   Stage stage = (Stage) sauve.getScene().getWindow();
+		   stage.close();
+		   this.r.recetteToFile();
+		   this.listEtape.clear();
+		   this.listIngr.clear();
+		   this.r=new Recette();
+	   }
 	   
+
 	   public void etaplus(ActionEvent event) {
-		   //l'idée sera de créer une liste qui s'injectera dans this.r.etape au lancement de la fonction save
+		   
+		   this.listEtape.add(etapes.getText());
+		   etapes.clear();
 	   }
 	   
 	   public void ingplus(ActionEvent event) {
-		   //idem que etaplus
+		   Ingredient ing = new Ingredient();
+		   
+		   ing.mesure=mesure.getText();
+		   ing.quantite=Integer.parseInt(quantite.getText());
+		   ing.nom=ingredients.getText();
+		   this.listIngr.add(ing);
+		   ingredients.clear();
+		   mesure.clear();
+		   quantite.clear();
 	   }
 	   
 	   public void pageRecettes(ActionEvent event) {
