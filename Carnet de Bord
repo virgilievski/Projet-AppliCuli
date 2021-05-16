@@ -17,3 +17,6 @@ Ca y est j'ai mal Ã  la main, bonne nuit !
 
 
 30/03/2021 : Auguste essaye d'avancer sur les controleur mais il est complÃ©tement perdu. Il n'assume pas avoir completement oubliÃ© le cours sur la structure en MVC. Il ne sait pas connait dire Ã  l'Appli quelle se base sur un unique modÃ¨le.
+
+15/05/2021 : Virgile a terminé la fonction recetteToFile, on peut donc passer du modèle au dossier des recettes (bdd). Il a également relié le bouton "nouvelle recette" à l'interface de création. Et il a un peu modifié l'interface.
+Prochaine étape : enregistrer les nouvelles recettes depuis l'interface de création et gérer les images.
