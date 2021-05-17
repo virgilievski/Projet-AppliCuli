@@ -29,7 +29,8 @@ public class Livre {
 		this.dico_recettes.put(this.nb_recettes, r);
 		r.id=this.nb_recettes;
 	}
-	public void fileToRecette(File fichier){
+	public Recette fileToRecette(File fichier){
+		Recette r = new Recette();
 		try
 		{
   
@@ -38,7 +39,6 @@ public class Livre {
 		// Créer l'objet BufferedReader        
 		BufferedReader br = new BufferedReader(fr);   
 		String line;
-		Recette r = new Recette();
 
 	    r.nom=line = br.readLine().toString();
 
@@ -57,20 +57,19 @@ public class Livre {
 
 	    String[] partsEtap = br.readLine().toString().split("/");
 	    for(int j=0; j<partsEtap.length; j++) {
-	        
-	        		
-	        
 	        r.list_etapes.add(partsEtap[j]);;
 		    }
 	     
 	    r.photo = br.readLine().toString();
-		        
-		      fr.close();    
+		this.ajoutRecette(r); 
+		fr.close();
+		
 		    }
 		    catch(IOException e)
 		    {
 		      e.printStackTrace();
 		    }
+		return r;
 		  }
 	
 	public ArrayList<Recette>  alaUne() {

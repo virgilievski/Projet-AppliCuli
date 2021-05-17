@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 import java.io.IOException;
@@ -34,14 +35,14 @@ public class SampleController {
 		 
 	public Livre livre;
 	public Recette r;
-	public ArrayList listEtape;
+	public ArrayList<String> listEtape;
 	public Set<Ingredient> listIngr;
 	
 	public SampleController() {
 		this.livre= new Livre();
 		this.r=new Recette();
-		this.listEtape= new ArrayList();
-		this.listIngr= new HashSet(); 
+		this.listEtape= new ArrayList<String>();
+		this.listIngr= new HashSet<Ingredient>(); 
 	}
 	   public void pageCreation(ActionEvent event) throws IOException {
 	       Stage newStageRecette = new Stage();
@@ -65,6 +66,8 @@ public class SampleController {
 	   @FXML private Button ingplus;
 	   @FXML private TextField mesure;
 	   @FXML private TextField quantite;
+	   
+	   
 	   public void save(ActionEvent event) throws IOException {
 		   
 		   this.r.nom = nom.getText();
@@ -105,8 +108,23 @@ public class SampleController {
 		   quantite.clear();
 	   }
 	   
-	   public void pageRecettes(ActionEvent event) {
-		   
+	   public void pageRecettes(ActionEvent event) throws IOException {
+		   Stage stage = (Stage) lbr.getScene().getWindow();
+		   AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("listeRecette.fxml"));
+		   Scene b = new Scene(root);
+		   stage.setScene(b);
+
+		   //boucle for sur le repertoire "Recettes", on applique la fonction fileToRecette à chaque élément pour pouvoir récup le nom des recettes qu'on affichera dans la fenetre 
+		   String rep = "Recettes";
+		   File file = new File(rep);
+		   String chemin = file.getAbsolutePath();
+		   File repertoire = new File(chemin);
+		   File[] recettes = repertoire.listFiles();
+		   for(int i=0; i< recettes.length; i++) {
+			   //la ligne d'en dessous est à remplacer par le listing dans l'application (ici elle est dans la console)
+			   System.out.println(this.livre.fileToRecette(recettes[i]).nom);
+			   
+		   }
 	   }
 		   
 		   
