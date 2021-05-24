@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import Modele.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,9 +20,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -43,6 +47,7 @@ public class SampleController {
 		this.r=new Recette();
 		this.listEtape= new ArrayList<String>();
 		this.listIngr= new HashSet<Ingredient>(); 
+		
 	}
 	   public void pageCreation(ActionEvent event) throws IOException {
 	       Stage newStageRecette = new Stage();
@@ -107,24 +112,30 @@ public class SampleController {
 		   mesure.clear();
 		   quantite.clear();
 	   }
-	   
+	   public final ObservableList<String> names = FXCollections.observableArrayList();
+	 
 	   public void pageRecettes(ActionEvent event) throws IOException {
 		   Stage stage = (Stage) lbr.getScene().getWindow();
 		   AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("listeRecette.fxml"));
 		   Scene b = new Scene(root);
 		   stage.setScene(b);
+		   
+	       final ListView<String> listView = new ListView<String>();
+	       listView.setPrefSize(200, 250);
+	       listView.setEditable(true);
+	        
+	       ArrayList<Recette> list = this.livre.liste();
+	        
+	       for(int i =0; i<list.size(); i++) {
+	    	   names.add(list.get(i).nom);
+	       }
+	          
+	       listView.setItems(names);      
+	       root.getChildren().add(listView);
 
-		   //boucle for sur le repertoire "Recettes", on applique la fonction fileToRecette à chaque élément pour pouvoir récup le nom des recettes qu'on affichera dans la fenetre 
-		   String rep = "Recettes";
-		   File file = new File(rep);
-		   String chemin = file.getAbsolutePath();
-		   File repertoire = new File(chemin);
-		   File[] recettes = repertoire.listFiles();
-		   for(int i=0; i< recettes.length; i++) {
-			   //la ligne d'en dessous est à remplacer par le listing dans l'application (ici elle est dans la console)
-			   System.out.println(this.livre.fileToRecette(recettes[i]).nom);
-			   
-		   }
+		   
+		   
+		   
 	   }
 		   
 		   

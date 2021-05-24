@@ -38,6 +38,7 @@ public class Main extends Application {
 			primaryStage.show();
 			primaryStage.setTitle("Culinarium");
 			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -47,24 +48,10 @@ public class Main extends Application {
 	
 	public static void main(String[] args) throws IOException {
 		launch(args);
+		Livre livre = new Livre();
 
-		Recette pates_bolo = new Recette();
-		pates_bolo.nom = "pates Bolognaise";
-		pates_bolo.saveur = "salé";
-		String bouillir =  "faire bouillir les pates";
-		String cuire = "chauffer la sauce bolognaise dans une poele";
-		String fin =  "verser les pates dans la poele";
-		pates_bolo.Ajout_etapes(bouillir);
-		pates_bolo.Ajout_etapes(cuire);
-		pates_bolo.Ajout_etapes(fin);
-		Ingredient pates = new Ingredient("pates", 500, "g");
-		Ingredient bolo = new Ingredient("bolognaise", 500, "g");
-		pates_bolo.Ajout_ingredient(pates);
-		pates_bolo.Ajout_ingredient(bolo);
-		pates_bolo.photo = "chemin/vers/photo/bolo";
-		pates_bolo.recetteToFile();
+		}
 
 	}
 	
 	
-}

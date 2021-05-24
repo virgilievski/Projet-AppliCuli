@@ -72,6 +72,20 @@ public class Livre {
 		return r;
 		  }
 	
+	public ArrayList<Recette> liste(){
+		ArrayList<Recette> l = new ArrayList<Recette>();
+		//boucle for sur le repertoire "Recettes", on applique la fonction fileToRecette à chaque élément pour pouvoir récup le nom des recettes qu'on affichera dans la fenetre 
+		String rep = "Recettes";
+		File file = new File(rep);
+		String chemin = file.getAbsolutePath();
+		File repertoire = new File(chemin);
+		File[] recettes = repertoire.listFiles();
+		for(int i=0; i< recettes.length; i++) {
+			l.add(fileToRecette(recettes[i]));
+		}
+		return l;
+	}
+	
 	public ArrayList<Recette>  alaUne() {
 		ArrayList<Recette> tab = new ArrayList<Recette>();
 		
