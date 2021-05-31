@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Observable;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Livre {
+public class Livre extends Observable {
 	public HashMap<Integer,Recette> dico_recettes;
 	public int nb_recettes;
 	
