@@ -21,7 +21,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Pagination;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.ComboBoxListCell;
@@ -57,8 +60,9 @@ public class SampleController {
     
 	       Scene a= new Scene(root);
 	       newStageRecette.setScene(a);
-	       newStageRecette.showAndWait();
 	       newStageRecette.setTitle("New Recipe"); 
+	       newStageRecette.showAndWait();
+	       
 	    }
 	   
 	   @FXML private Button sauve;
@@ -71,6 +75,8 @@ public class SampleController {
 	   @FXML private Button ingplus;
 	   @FXML private TextField mesure;
 	   @FXML private TextField quantite;
+	   @FXML private Pagination pagination;
+	   @FXML private TextArea	bruno;
 	   
 	   
 	   public void save(ActionEvent event) throws IOException {
@@ -115,14 +121,20 @@ public class SampleController {
 	   public final ObservableList<String> names = FXCollections.observableArrayList();
 	 
 	   public void pageRecettes(ActionEvent event) throws IOException {
+		   
 		   Stage stage = (Stage) lbr.getScene().getWindow();
 		   AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("listeRecette.fxml"));
 		   Scene b = new Scene(root);
 		   stage.setScene(b);
 		   
-	       final ListView<String> listView = new ListView<String>();
-	       listView.setPrefSize(200, 250);
-	       listView.setEditable(true);
+		   
+	       final TableView<String> mortecouille = new TableView<String>();
+	       TableColumn<String ,String> nom = new TableColumn<String, String>("Nom");
+	       mortecouille.setLayoutX(20);
+	       mortecouille.setLayoutY(39);
+	       mortecouille.setPrefSize(322, 533);
+	       mortecouille.setEditable(true);
+	       mortecouille.getColumns().addAll(nom);
 	        
 	       ArrayList<Recette> list = this.livre.liste();
 	        
@@ -130,14 +142,14 @@ public class SampleController {
 	    	   names.add(list.get(i).nom);
 	       }
 	          
-	       listView.setItems(names);      
-	       root.getChildren().add(listView);
+	       mortecouille.setItems(names);      
+	       root.getChildren().add(mortecouille); 
+	       
 
-		   
-		   
+		  
 		   
 	   }
-		   
+	 
 		   
 	    
 	}

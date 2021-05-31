@@ -59,7 +59,7 @@
       </Button>
       <Pane layoutX="70.0" layoutY="290.0" prefHeight="219.0" prefWidth="252.0">
          <children>
-            <Pagination maxPageIndicatorCount="5" pageCount="5" prefHeight="219.0" prefWidth="252.0" />
+            <Pagination fx:id="pagination" maxPageIndicatorCount="5" pageCount="5" prefHeight="219.0" prefWidth="252.0" />
          </children>
       </Pane>
    </children>
