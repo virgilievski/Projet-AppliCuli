@@ -145,12 +145,23 @@ public class SampleController {
 			   ingredients.clear();
 			   mesure.clear();
 			   quantite.clear();
+			   quantite.setStyle("-fx-background-color: green;");
+			   ingredients.setStyle("-fx-background-color: green;");
+			   mesure.setStyle("-fx-background-color: green;");
+			   
 		   }
-		   else if (ingredients.getText().isEmpty()) {
-			   ingredients.setStyle("-fx-background-color: white;");
+		   else {
+			   if (ingredients.getText().isEmpty()) {
+				   ingredients.setStyle("-fx-background-color: red;"); 
+			   
+			}
+			   
+			   if (quantite.getText().isEmpty()) {
+			   quantite.setStyle("-fx-background-color: red;");
+		   }
 		   }
 		   
-		   
+		  
 		   
 	   }
 	   
