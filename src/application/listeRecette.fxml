@@ -31,7 +31,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="barrerecherche" layoutX="25.0" layoutY="42.0" />
-      <Button fx:id="recherche" layoutX="190.0" layoutY="42.0" mnemonicParsing="false" text="Rechercher" textFill="#fd07c4" />
+      <TextField fx:id="barrerecherche" layoutX="352.0" layoutY="42.0" />
+      <Button fx:id="recherche" layoutX="510.0" layoutY="42.0" mnemonicParsing="false" text="Rechercher" textFill="#fd07c4" />
    </children>
 </AnchorPane>
