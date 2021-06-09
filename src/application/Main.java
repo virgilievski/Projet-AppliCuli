@@ -48,7 +48,10 @@ public class Main extends Application {
 	
 	public static void main(String[] args) throws IOException {
 		launch(args);
-	
+
+		Livre livre = new Livre();
+		
+
 
 		}
 
