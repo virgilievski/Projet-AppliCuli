@@ -35,6 +35,14 @@ public class Recette {
 		this.list_etapes=new ArrayList();
 		
 	}
+	public String getNom() {
+		return this.nom;
+		
+	}
+	public String getSaveur() {
+		return this.saveur;
+		
+	}
 	
 	public void Ajout_ingredient(Ingredient ing) {
 		this.list_ingredients.add(ing);
