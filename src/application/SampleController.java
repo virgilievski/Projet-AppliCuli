@@ -28,6 +28,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.ComboBoxListCell;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -97,6 +98,7 @@ public class SampleController {
 		   Stage stage = (Stage) sauve.getScene().getWindow();
 		   stage.close();
 		   this.r.recetteToFile();
+		   this.livre.ajoutRecette(r);
 		   this.listEtape.clear();
 		   this.listIngr.clear();
 		   this.r=new Recette();
@@ -111,17 +113,35 @@ public class SampleController {
 	   
 	   public void ingplus(ActionEvent event) {
 		   Ingredient ing = new Ingredient();
+		   if (mesure.getText().isEmpty()){
+			   ing.mesure=null;  
+		   }
+		   else ing.mesure=mesure.getText();
 		   
-		   ing.mesure=mesure.getText();
+		   
 		   ing.quantite=Integer.parseInt(quantite.getText());
-		   ing.nom=ingredients.getText();
-		   this.listIngr.add(ing);
-		   ingredients.clear();
-		   mesure.clear();
-		   quantite.clear();
+		   if (!ingredients.getText().isEmpty()) {
+			   ing.nom=ingredients.getText();
+			   this.listIngr.add(ing);
+			   ingredients.clear();
+			   mesure.clear();
+			   quantite.clear();
+		   }
+		   
+		   
+		   
+		   
 	   }
-	   public final ObservableList<String> names = FXCollections.observableArrayList();
-	 
+	   
+	   public ObservableList<Recette> getRecette(){
+		   ObservableList<Recette> recipes = FXCollections.observableArrayList(); 
+		   ArrayList<Recette> list = this.livre.liste();
+	        
+	       for(int i =0; i<list.size(); i++) {
+	    	   recipes.add(list.get(i));
+	       }
+	       return recipes;
+	   }
 	   public void pageRecettes(ActionEvent event) throws IOException {
 		   
 		   Stage stage = (Stage) lbr.getScene().getWindow();
@@ -129,27 +149,32 @@ public class SampleController {
 		   Scene b = new Scene(root);
 		   stage.setScene(b);
 		   
-	       final TableView<String> mortecouille = new TableView<String>();
-	       TableColumn<String ,String> nom = new TableColumn<String, String>("Nom");
+
+		   
+	       final TableView<Recette> mortecouille = new TableView<Recette>();
+	       TableColumn<Recette ,String> nom = new TableColumn<Recette, String>("Nom");
+	       nom.setCellValueFactory(new PropertyValueFactory<Recette, String>("nom"));
+	       TableColumn<Recette ,String> saveur1 = new TableColumn<Recette, String>("Saveur");
+	       saveur1.setCellValueFactory(new PropertyValueFactory<Recette, String>("saveur"));
+
 	       mortecouille.setLayoutX(20);
 	       mortecouille.setLayoutY(39);
 	       mortecouille.setPrefSize(322, 533);
 	       mortecouille.setEditable(true);
-	       mortecouille.getColumns().addAll(nom);
-	       
-	       
+
 	        
-	       ArrayList<Recette> list = this.livre.liste();
-	        
-	       for(int i =0; i<list.size(); i++) {
-	    	   names.add(list.get(i).nom);
-	       }
+	      
 	          
-	       mortecouille.setItems(names);      
+	       mortecouille.setItems(getRecette());
+	       mortecouille.getColumns().addAll(nom,saveur1);
 	       root.getChildren().add(mortecouille); 
 	       
 
 		  
+		   
+	   }
+	   
+	   public void triSaveur(ActionEvent event) {
 		   
 	   }
 	 
