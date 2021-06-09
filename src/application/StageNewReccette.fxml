@@ -35,6 +35,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -84,11 +85,11 @@
       </Label>
       <Button fx:id="etplus" layoutX="234.0" layoutY="157.0" mnemonicParsing="false" onAction="#etaplus" prefHeight="26.0" prefWidth="13.0" text="+" />
       <Button fx:id="ingplus" layoutX="357.0" layoutY="297.0" mnemonicParsing="false" onAction="#ingplus" prefHeight="26.0" prefWidth="113.0" text="+" />
-      <TextField fx:id="image" layoutX="49.0" layoutY="274.0" prefHeight="71.0" prefWidth="171.0" />
       <Label layoutX="354.0" layoutY="162.0" text="Nom :" />
       <TextField fx:id="quantite" layoutX="440.0" layoutY="219.0" prefHeight="26.0" prefWidth="39.0" />
       <Label layoutX="356.0" layoutY="224.0" text="Quantité :" />
       <Label layoutX="360.0" layoutY="260.0" text="Mesure :" />
       <TextField fx:id="mesure" layoutX="440.0" layoutY="255.0" prefHeight="26.0" prefWidth="39.0" />
+      <ImageView fx:id="dragon" fitHeight="121.0" fitWidth="156.0" layoutX="64.0" layoutY="263.0" onDragOver="#handledragover" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
