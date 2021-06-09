@@ -1,11 +1,13 @@
 package application;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import Modele.*;
@@ -29,7 +31,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
@@ -80,6 +85,8 @@ public class SampleController {
 	   @FXML private TextArea	bruno;
 	   @FXML private TextField barrerecherche;
 	   @FXML private Button recherche;
+	   @FXML private ImageView dragon;
+	   
 	   
 	   
 	   public void save(ActionEvent event) throws IOException {
@@ -178,6 +185,20 @@ public class SampleController {
 
 		  
 		   
+	   }
+	   
+	   @FXML
+	   private void handledragover(DragEvent event) {
+		   if(event.getDragboard().hasFiles()) {
+			   event.acceptTransferModes(TransferMode.ANY);
+		   }
+	    }
+	   
+	   @FXML
+	   private void handledrop(DragEvent event) throws FileNotFoundException {
+		   List<File> files = event.getDragboard().getFiles();
+		   Image img = new Image(new FileInputStream(files.get(0)));
+		   dragon.setImage(img);
 	   }
 	   
 	   public void triSaveur(ActionEvent event) {
