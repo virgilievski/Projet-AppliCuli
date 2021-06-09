@@ -83,10 +83,13 @@ public class SampleController {
 	   
 	   
 	   public void save(ActionEvent event) throws IOException {
+		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() ) {
+			   this.r.nom = nom.getText();
+			   this.r.saveur = saveur.getText();
+		   }
 		   
-		   this.r.nom = nom.getText();
-		   this.r.saveur = saveur.getText();
-		   this.r.photo = image.getText();
+		   
+		   
 		   if (!etapes.getText().isEmpty()){
 			   this.listEtape.add(etapes.getText());
 		   }
@@ -106,9 +109,11 @@ public class SampleController {
 	   
 
 	   public void etaplus(ActionEvent event) {
+		   if (!etapes.getText().isEmpty()) {
+			   this.listEtape.add(etapes.getText());
+			   etapes.clear();
+		   }
 		   
-		   this.listEtape.add(etapes.getText());
-		   etapes.clear();
 	   }
 	   
 	   public void ingplus(ActionEvent event) {
@@ -119,9 +124,10 @@ public class SampleController {
 		   else ing.mesure=mesure.getText();
 		   
 		   
-		   ing.quantite=Integer.parseInt(quantite.getText());
-		   if (!ingredients.getText().isEmpty()) {
+			   
+		   if (!(ingredients.getText().isEmpty() || quantite.getText().isEmpty())) {
 			   ing.nom=ingredients.getText();
+			   ing.quantite=Integer.parseInt(quantite.getText());
 			   this.listIngr.add(ing);
 			   ingredients.clear();
 			   mesure.clear();
