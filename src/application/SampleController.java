@@ -77,6 +77,8 @@ public class SampleController {
 	   @FXML private TextField quantite;
 	   @FXML private Pagination pagination;
 	   @FXML private TextArea	bruno;
+	   @FXML private TextField barrerecherche;
+	   @FXML private Button recherche;
 	   
 	   
 	   public void save(ActionEvent event) throws IOException {
@@ -127,7 +129,6 @@ public class SampleController {
 		   Scene b = new Scene(root);
 		   stage.setScene(b);
 		   
-		   
 	       final TableView<String> mortecouille = new TableView<String>();
 	       TableColumn<String ,String> nom = new TableColumn<String, String>("Nom");
 	       mortecouille.setLayoutX(20);
@@ -135,6 +136,8 @@ public class SampleController {
 	       mortecouille.setPrefSize(322, 533);
 	       mortecouille.setEditable(true);
 	       mortecouille.getColumns().addAll(nom);
+	       
+	       
 	        
 	       ArrayList<Recette> list = this.livre.liste();
 	        
