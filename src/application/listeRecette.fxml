@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -9,17 +10,19 @@
    <children>
       <MenuBar layoutY="1.0" AnchorPane.bottomAnchor="374.4" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Fichier">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" text="Acceuil" />
+                  <MenuItem mnemonicParsing="false" onAction="#pageCreation" text="Nouvelle recette" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Trier">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <CheckMenuItem mnemonicParsing="false" text="Par Nom" />
+                  <CheckMenuItem mnemonicParsing="false" text="Par Saveur" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Filtrer">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
