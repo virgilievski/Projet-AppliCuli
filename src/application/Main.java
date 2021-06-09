@@ -47,7 +47,8 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		
+		ArrayList l = new ArrayList();
+		System.out.print(l.size());
 		launch(args);
 
 		Livre livre = new Livre();

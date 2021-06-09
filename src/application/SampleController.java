@@ -90,28 +90,34 @@ public class SampleController {
 	   
 	   
 	   public void save(ActionEvent event) throws IOException {
-		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() ) {
-			   this.r.nom = nom.getText();
-			   this.r.saveur = saveur.getText();
-		   }
-		   
-		   
 		   
 		   if (!etapes.getText().isEmpty()){
-			   this.listEtape.add(etapes.getText());
+			   etaplus(event);
 		   }
 		   if (!ingredients.getText().isEmpty()) {
 			   ingplus(event);
 		   }
-		   this.r.list_ingredients=this.listIngr;
-		   this.r.list_etapes=this.listEtape;
-		   Stage stage = (Stage) sauve.getScene().getWindow();
-		   stage.close();
-		   this.r.recetteToFile();
-		   this.livre.ajoutRecette(r);
-		   this.listEtape.clear();
-		   this.listIngr.clear();
-		   this.r=new Recette();
+		   
+		   
+		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() && this.listEtape.size()>0 && this.listIngr.size()>0) {
+			   this.r.nom = nom.getText();
+			   this.r.saveur = saveur.getText();
+			   this.r.list_ingredients=this.listIngr;
+			   this.r.list_etapes=this.listEtape;
+		  
+			   Stage stage = (Stage) sauve.getScene().getWindow();
+			   stage.close();
+			   this.r.recetteToFile();
+			   this.livre.ajoutRecette(r);
+			   this.listEtape.clear();
+			   this.listIngr.clear();
+			   this.r=new Recette();
+		   
+		   }
+		   
+		   
+	   
+		   
 	   }
 	   
 
@@ -140,7 +146,9 @@ public class SampleController {
 			   mesure.clear();
 			   quantite.clear();
 		   }
-		   
+		   else if (ingredients.getText().isEmpty()) {
+			   ingredients.setStyle("-fx-background-color: white;");
+		   }
 		   
 		   
 		   
