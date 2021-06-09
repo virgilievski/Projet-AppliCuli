@@ -78,6 +78,8 @@ public class SampleController {
 	   @FXML private TextField quantite;
 	   @FXML private Pagination pagination;
 	   @FXML private TextArea	bruno;
+	   @FXML private TextField barrerecherche;
+	   @FXML private Button recherche;
 	   
 	   
 	   public void save(ActionEvent event) throws IOException {
@@ -111,14 +113,24 @@ public class SampleController {
 	   
 	   public void ingplus(ActionEvent event) {
 		   Ingredient ing = new Ingredient();
+		   if (mesure.getText().isEmpty()){
+			   ing.mesure=null;  
+		   }
+		   else ing.mesure=mesure.getText();
 		   
-		   ing.mesure=mesure.getText();
+		   
 		   ing.quantite=Integer.parseInt(quantite.getText());
-		   ing.nom=ingredients.getText();
-		   this.listIngr.add(ing);
-		   ingredients.clear();
-		   mesure.clear();
-		   quantite.clear();
+		   if (!ingredients.getText().isEmpty()) {
+			   ing.nom=ingredients.getText();
+			   this.listIngr.add(ing);
+			   ingredients.clear();
+			   mesure.clear();
+			   quantite.clear();
+		   }
+		   
+		   
+		   
+		   
 	   }
 	   
 	   public ObservableList<Recette> getRecette(){
@@ -137,17 +149,19 @@ public class SampleController {
 		   Scene b = new Scene(root);
 		   stage.setScene(b);
 		   
+
 		   
 	       final TableView<Recette> mortecouille = new TableView<Recette>();
 	       TableColumn<Recette ,String> nom = new TableColumn<Recette, String>("Nom");
 	       nom.setCellValueFactory(new PropertyValueFactory<Recette, String>("nom"));
 	       TableColumn<Recette ,String> saveur1 = new TableColumn<Recette, String>("Saveur");
 	       saveur1.setCellValueFactory(new PropertyValueFactory<Recette, String>("saveur"));
+
 	       mortecouille.setLayoutX(20);
 	       mortecouille.setLayoutY(39);
 	       mortecouille.setPrefSize(322, 533);
 	       mortecouille.setEditable(true);
-	       
+
 	        
 	      
 	          
