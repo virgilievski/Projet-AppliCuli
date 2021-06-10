@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Set;
 import java.util.TreeSet;
@@ -85,6 +86,24 @@ public class Livre extends Observable {
 			l.add(fileToRecette(recettes[i]));
 		}
 		return l;
+	}
+	
+	public ArrayList<Recette> tri_nom(){
+		ArrayList<Recette> l = new ArrayList<Recette>();
+		Iterator it = this.dico_recettes.entrySet().iterator();
+	    while (it.hasNext()) {
+	        int i=0;
+	    	Map.Entry pair = (Map.Entry)it.next();
+	    	Recette r=(Recette)pair.getValue();
+	        while ( l.get(i).nom.compareTo(r.nom)==-1 && i<l.size()) {
+	        	i+=1;
+	        }
+	        l.add(i, (Recette) pair.getValue());
+	        it.remove(); 
+	    }
+	    
+	    return l;
+	    
 	}
 	
 	public ArrayList<Recette>  alaUne() {
