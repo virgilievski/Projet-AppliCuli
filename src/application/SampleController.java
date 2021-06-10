@@ -87,7 +87,7 @@ public class SampleController {
 	   @FXML private Button recherche;
 	   @FXML private ImageView dragon;
 	   @FXML private TableView<Recette> table;
-	   
+	   @FXML private TableColumn<Recette ,String> tab1;
 	   
 	   public void save(ActionEvent event) throws IOException {
 		   
@@ -178,30 +178,30 @@ public class SampleController {
 		   
 
 		   
-		   ////TableView<Recette> mortecouille = new TableView<Recette>();
-		   //TableColumn<Recette ,String> nom = new TableColumn<Recette, String>("Nom");
-	       //nom.setCellValueFactory(new PropertyValueFactory<Recette, String>("nom"));
-	       //TableColumn<Recette ,String> saveur1 = new TableColumn<Recette, String>("Saveur");
-	       //saveur1.setCellValueFactory(new PropertyValueFactory<Recette, String>("saveur"));
+		   table = new TableView<Recette>();
+		   tab1 = new TableColumn<Recette, String>("Nom");
+		   tab1.setCellValueFactory(new PropertyValueFactory<Recette, String>("nom"));
+		   // TableColumn<Recette ,String> saveur1 = new TableColumn<Recette, String>("Saveur");
+		   // saveur1.setCellValueFactory(new PropertyValueFactory<Recette, String>("saveur"));
 
-	       //mortecouille.setLayoutX(20);
-	       //mortecouille.setLayoutY(39);
-	       //mortecouille.setPrefSize(322, 533);
-	       //mortecouille.setEditable(true);
+		   //   mortecouille.setLayoutX(20);
+	   //    mortecouille.setLayoutY(39);
+	   //  mortecouille.setPrefSize(322, 533);
+	   //   mortecouille.setEditable(true);
 
 	        
 	      
 	          
-	       //mortecouille.setItems(getRecette());
-	       //mortecouille.getColumns().addAll(nom,saveur1);
-	       //root.getChildren().add(mortecouille); 
+		   table.setItems(getRecette());
+		   table.getColumns().addAll(tab1);
+		   root.getChildren().add(table); 
 	       
 
 		  
 		   
 	   }
 	   public void recherche(ActionEvent event) {
-		   System.out.print(barrerecherche.getText());
+		   
 	   }
 	   @FXML
 	   private void handledragover(DragEvent event) {

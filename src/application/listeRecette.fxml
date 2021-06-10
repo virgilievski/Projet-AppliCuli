@@ -37,7 +37,7 @@
       <Button fx:id="recherche" layoutX="510.0" layoutY="42.0" mnemonicParsing="false" onAction="#recherche" text="Rechercher" textFill="#fd07c4" />
       <TableView fx:id="table" layoutX="45.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
-            <TableColumn fx:id="tab1" editable="false" prefWidth="199.0" sortable="false" text="Column X" />
+            <TableColumn fx:id="tab1" editable="false" prefWidth="199.0" sortable="false" text="Nom" />
         </columns>
       </TableView>
    </children>
