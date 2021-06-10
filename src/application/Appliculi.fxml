@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="802.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="802.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -36,18 +36,18 @@
             <Image url="@../Image/bienvenue.png" />
          </image>
       </ImageView>
-      <Button fx:id="nr" layoutX="586.0" layoutY="356.0" mnemonicParsing="false" onAction="#pageCreation" prefHeight="86.0" prefWidth="158.0" textFill="#fd0b0b">
+      <Button fx:id="nr" layoutX="586.0" layoutY="356.0" mnemonicParsing="false" onAction="#newRecetteScene" prefHeight="86.0" prefWidth="158.0" textFill="#fd0b0b">
          <graphic>
-            <ImageView fitHeight="117.0" fitWidth="140.0" onMousePressed="#pageCreation" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="117.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/new.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="lbr" layoutX="401.0" layoutY="344.0" mnemonicParsing="false" onAction="#pageRecettes">
+      <Button fx:id="lbr" layoutX="401.0" layoutY="344.0" mnemonicParsing="false" onAction="#listeRecetteScene">
          <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMousePressed="#pageRecettes" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Image/livre%20rectte.jpg" />
                </image>

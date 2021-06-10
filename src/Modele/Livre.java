@@ -20,10 +20,19 @@ public class Livre extends Observable {
 	public HashMap<Integer,Recette> dico_recettes;
 	public int nb_recettes;
 	
-	
 	public Livre() {
 		this.dico_recettes= new HashMap();
 		this.nb_recettes=0;
+		String rep = "Recettes";
+		File file = new File(rep);
+		String chemin = file.getAbsolutePath();
+		File repertoire = new File(chemin);
+		File[] recettes = repertoire.listFiles();
+		for(int i=0; i< recettes.length; i++) {
+			this.dico_recettes.put(i,fileToRecette(recettes[i]) );
+			this.nb_recettes+=1;	
+		}
+		
 	}
 	
 	public void ajoutRecette(Recette r) {
@@ -31,6 +40,7 @@ public class Livre extends Observable {
 		this.dico_recettes.put(this.nb_recettes, r);
 		r.id=this.nb_recettes;
 	}
+	
 	public Recette fileToRecette(File fichier){
 		Recette r = new Recette();
 		try
@@ -73,7 +83,19 @@ public class Livre extends Observable {
 		    }
 		return r;
 		  }
-	
+	public Livre charger() {
+		Livre l = new Livre();
+		String rep = "Recettes";
+		File file = new File(rep);
+		String chemin = file.getAbsolutePath();
+		File repertoire = new File(chemin);
+		File[] recettes = repertoire.listFiles();
+		for(int i=0; i< recettes.length; i++) {
+			l.ajoutRecette(fileToRecette(recettes[i]));	
+		}
+		return l;
+				
+	}
 	public ArrayList<Recette> liste(){
 		ArrayList<Recette> l = new ArrayList<Recette>();
 		//boucle for sur le repertoire "Recettes", on applique la fonction fileToRecette à chaque élément pour pouvoir récup le nom des recettes qu'on affichera dans la fenetre 
@@ -86,24 +108,6 @@ public class Livre extends Observable {
 			l.add(fileToRecette(recettes[i]));
 		}
 		return l;
-	}
-	
-	public ArrayList<Recette> tri_nom(){
-		ArrayList<Recette> l = new ArrayList<Recette>();
-		Iterator it = this.dico_recettes.entrySet().iterator();
-	    while (it.hasNext()) {
-	        int i=0;
-	    	Map.Entry pair = (Map.Entry)it.next();
-	    	Recette r=(Recette)pair.getValue();
-	        while ( l.get(i).nom.compareTo(r.nom)==-1 && i<l.size()) {
-	        	i+=1;
-	        }
-	        l.add(i, (Recette) pair.getValue());
-	        it.remove(); 
-	    }
-	    
-	    return l;
-	    
 	}
 	
 	public ArrayList<Recette>  alaUne() {
