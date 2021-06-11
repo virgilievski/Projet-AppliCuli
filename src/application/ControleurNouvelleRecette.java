@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,9 +10,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.imageio.ImageIO;
+
 import Modele.Ingredient;
 import Modele.Livre;
 import Modele.Recette;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -21,6 +25,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class ControleurNouvelleRecette {
@@ -105,7 +110,7 @@ public class ControleurNouvelleRecette {
 		List<File> files = event.getDragboard().getFiles();
 		Image img = new Image(new FileInputStream(files.get(0)));
 		dragon.setImage(img);
-	   }
+	    }
 	
     public void save(ActionEvent event) throws IOException {
 
@@ -117,20 +122,25 @@ public class ControleurNouvelleRecette {
 			   ingplus(event);
 		   }		   
 	   
-	   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() && this.listEtape.size()>0 && this.listIngr.size()>0) {
+		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() && this.listEtape.size()>0 && this.listIngr.size()>0) {
 			   this.r.nom = nom.getText();
 			   this.r.saveur = saveur.getText();
 			   this.r.list_ingredients=this.listIngr;
 			   this.r.list_etapes=this.listEtape;
-	  
-			
-		   this.r.recetteToFile();
-		   this.livre.ajoutRecette(r);
+			   String rep="src/Image";
+			   File newImage = new File(rep+nom.getText()+".png");
+			   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
+			   ImageIO.write(bi, "png", newImage);
+			   this.r.recetteToFile();
+			   this.nom.clear();
+			   this.saveur.clear();
+			   this.livre.ajoutRecette(r);
 			   this.listEtape.clear();
-		   this.listIngr.clear();
+			   this.listIngr.clear();
 			   this.r=new Recette();
-		   Stage s =(Stage) btnsauvegarder.getScene().getWindow();
-		   s.setScene(listeRecette);
+			   
+			   Stage s =(Stage) btnsauvegarder.getScene().getWindow();
+			   s.setScene(listeRecette);
 		   }   
 	   }
 	   
