@@ -90,6 +90,6 @@
       <Label layoutX="356.0" layoutY="224.0" text="Quantité :" />
       <Label layoutX="360.0" layoutY="260.0" text="Mesure :" />
       <TextField fx:id="mesure" layoutX="440.0" layoutY="255.0" prefHeight="26.0" prefWidth="39.0" />
-      <ImageView fx:id="dragon" fitHeight="121.0" fitWidth="156.0" layoutX="64.0" layoutY="263.0" onDragOver="#handledragover" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="dragon" fitHeight="121.0" fitWidth="156.0" layoutX="64.0" layoutY="263.0" onDragDropped="#handledrop" onDragOver="#handledragover" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
