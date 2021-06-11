@@ -127,7 +127,7 @@ public class ControleurNouvelleRecette {
 			   this.r.saveur = saveur.getText();
 			   this.r.list_ingredients=this.listIngr;
 			   this.r.list_etapes=this.listEtape;
-			   String rep="src/Image";
+			   String rep="src/Image/";
 			   File newImage = new File(rep+nom.getText()+".png");
 			   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
 			   ImageIO.write(bi, "png", newImage);

@@ -25,6 +25,8 @@ public class ControlleurListeRecette implements Initializable{
 	@FXML private TextField barrerecherche;
 	@FXML private TableView<Recette> table;
 	@FXML private TableColumn<Recette ,String> tab1;
+	@FXML private TableColumn<Recette ,String> tab2;
+	@FXML private TableColumn<Recette ,String> tab3;
 	private Livre livre;
 	private Scene Acceuil;
 	private Scene nouvelleRecette;
@@ -51,7 +53,7 @@ public class ControlleurListeRecette implements Initializable{
 		Stage s =(Stage) btnrecherche.getScene().getWindow(); 
 		s.setScene(nouvelleRecette);
 	}
-	
+ 
 	public ObservableList<Recette> getRecette(){
 		ObservableList<Recette> recipes = FXCollections.observableArrayList(); 
 		ArrayList<Recette> list = this.livre.liste();
@@ -65,11 +67,17 @@ public class ControlleurListeRecette implements Initializable{
 	public void recherche(ActionEvent event) {
 		   
 	   }
+	
+	public void update() {
+		table.setItems(getRecette());
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		tab1.setCellValueFactory(new PropertyValueFactory<Recette,String>("nom"));
+		tab2.setCellValueFactory(new PropertyValueFactory<Recette,String>("saveur"));
+		
 		table.setItems(getRecette());
 	}
 	

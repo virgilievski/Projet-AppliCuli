@@ -33,11 +33,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="barrerecherche" layoutX="352.0" layoutY="42.0" />
-      <Button fx:id="btnrecherche" layoutX="510.0" layoutY="42.0" mnemonicParsing="false" text="Rechercher" textFill="#fd07c4" />
-      <TableView fx:id="table" layoutX="138.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0">
+      <TextField fx:id="barrerecherche" layoutY="26.0" />
+      <Button fx:id="btnrecherche" layoutX="149.0" layoutY="26.0" mnemonicParsing="false" onAction="#update" text="Rechercher" textFill="#fd07c4" />
+      <TableView fx:id="table" layoutY="51.0" prefHeight="345.0" prefWidth="600.0">
         <columns>
             <TableColumn fx:id="tab1" editable="false" prefWidth="199.0" sortable="false" text="Nom" />
+            <TableColumn fx:id="tab2" prefWidth="193.0" text="Saveur" />
+            <TableColumn fx:id="tab3" minWidth="0.0" prefWidth="214.0" text="Ingrédients" />
         </columns>
       </TableView>
    </children>

@@ -37,6 +37,15 @@ public class Recette {
 	}
 	public String getNom() {
 		return this.nom;
+	
+		
+	}
+	public ArrayList<String> getNomIngrédient() {
+		ArrayList<String> l = new ArrayList();
+		Set i = this.list_ingredients;
+		
+		
+		return l;
 		
 	}
 	public String getSaveur() {
