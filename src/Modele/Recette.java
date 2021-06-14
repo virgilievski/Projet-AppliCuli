@@ -42,8 +42,13 @@ public class Recette {
 	}
 	public ArrayList<String> getNomIngrédient() {
 		ArrayList<String> l = new ArrayList();
-		Set i = this.list_ingredients;
-		
+		Set<Ingredient> i = this.list_ingredients;
+		Iterator it = i.iterator();
+		while (it.hasNext()) {
+			Ingredient ing =(Ingredient) it.next();
+			l.add(ing.nom);
+		}
+
 		
 		return l;
 		

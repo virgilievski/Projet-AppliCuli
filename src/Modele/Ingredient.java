@@ -19,5 +19,9 @@ public class Ingredient {
 		this.quantite=0;
 		this.mesure=null;
 	}
+	@Override
+	public String toString() {
+		return this.nom;
+	}
 
 }

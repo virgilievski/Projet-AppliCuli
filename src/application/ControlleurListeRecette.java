@@ -3,7 +3,9 @@ package application;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Set;
 
+import Modele.Ingredient;
 import Modele.Livre;
 import Modele.Recette;
 import javafx.collections.FXCollections;
@@ -26,7 +28,6 @@ public class ControlleurListeRecette implements Initializable{
 	@FXML private TableView<Recette> table;
 	@FXML private TableColumn<Recette ,String> tab1;
 	@FXML private TableColumn<Recette ,String> tab2;
-	@FXML private TableColumn<Recette ,String> tab3;
 	private Livre livre;
 	private Scene Acceuil;
 	private Scene nouvelleRecette;
@@ -53,7 +54,7 @@ public class ControlleurListeRecette implements Initializable{
 		Stage s =(Stage) btnrecherche.getScene().getWindow(); 
 		s.setScene(nouvelleRecette);
 	}
- 
+	
 	public ObservableList<Recette> getRecette(){
 		ObservableList<Recette> recipes = FXCollections.observableArrayList(); 
 		ArrayList<Recette> list = this.livre.liste();
@@ -77,7 +78,8 @@ public class ControlleurListeRecette implements Initializable{
 		// TODO Auto-generated method stub
 		tab1.setCellValueFactory(new PropertyValueFactory<Recette,String>("nom"));
 		tab2.setCellValueFactory(new PropertyValueFactory<Recette,String>("saveur"));
-		
+
+	
 		table.setItems(getRecette());
 	}
 	
