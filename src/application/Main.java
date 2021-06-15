@@ -71,7 +71,7 @@ public class Main extends Application {
         ctrlListe.getNouvelleRecette(nouvelleRecette);
         
         
-        FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("listeRecette.fxml"));
+        FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("RecetteScene.fxml"));
         ControllerRecette ctrlRecette = new ControllerRecette();
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
