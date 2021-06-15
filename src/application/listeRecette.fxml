@@ -35,7 +35,7 @@
       </MenuBar>
       <TextField fx:id="barrerecherche" layoutY="26.0" />
       <Button fx:id="btnrecherche" layoutX="149.0" layoutY="26.0" mnemonicParsing="false" onAction="#update" text="Rechercher" textFill="#fd07c4" />
-      <TableView fx:id="table" layoutY="50.0" prefHeight="346.0" prefWidth="380.0">
+      <TableView fx:id="table" layoutY="50.0" onMouseClicked="#clickcell" prefHeight="346.0" prefWidth="380.0">
         <columns>
             <TableColumn fx:id="tab1" editable="false" prefWidth="199.0" text="Nom" />
             <TableColumn fx:id="tab2" editable="false" prefWidth="193.0" text="Saveur" />

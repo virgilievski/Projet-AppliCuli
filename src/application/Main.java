@@ -71,6 +71,11 @@ public class Main extends Application {
         ctrlListe.getNouvelleRecette(nouvelleRecette);
         
         
+        FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("listeRecette.fxml"));
+        ControllerRecette ctrlRecette = new ControllerRecette();
+        RecetteSceneLoader.setController(ctrlRecette);
+        Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
+        listeRecette = new Scene(RecetteRoot);
         
 		acceuil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(acceuil);

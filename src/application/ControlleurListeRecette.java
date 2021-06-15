@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ControlleurListeRecette implements Initializable{
@@ -49,7 +50,11 @@ public class ControlleurListeRecette implements Initializable{
 		Stage s =(Stage) btnrecherche.getScene().getWindow();
 		s.setScene(Acceuil);
 	}
-	
+	public void clickcell(MouseEvent event) {
+		if (event.getClickCount() == 2) {
+			System.out.print(table.getSelectionModel().getSelectedItem().nom);
+		}
+	}
 	public void nouvelleRecetteScene() {
 		Stage s =(Stage) btnrecherche.getScene().getWindow(); 
 		s.setScene(nouvelleRecette);
