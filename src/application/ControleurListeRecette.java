@@ -22,7 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class ControlleurListeRecette implements Initializable{
+public class ControleurListeRecette implements Initializable{
 	
 	@FXML private Button btnrecherche;
 	@FXML private TextField barrerecherche;
@@ -33,7 +33,7 @@ public class ControlleurListeRecette implements Initializable{
 	private Scene Acceuil;
 	private Scene nouvelleRecette;
 	
-	public ControlleurListeRecette(Livre livre) {
+	public ControleurListeRecette(Livre livre) {
 		this.livre=livre;
 	}
 

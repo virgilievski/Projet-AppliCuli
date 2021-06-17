@@ -42,7 +42,7 @@ public class Main extends Application {
 		
         
         FXMLLoader acceuilLoader = new FXMLLoader(getClass().getResource("Appliculi.fxml"));
-        ControlleurAcceuil ctrlAcceuil = new ControlleurAcceuil();
+        ControleurAccueil ctrlAcceuil = new ControleurAccueil();
         acceuilLoader.setController(ctrlAcceuil);
         
         Parent acceuilRoot = (Parent) acceuilLoader.load();
@@ -50,7 +50,7 @@ public class Main extends Application {
         
        
         FXMLLoader listeRecetteLoader = new FXMLLoader(getClass().getResource("listeRecette.fxml"));
-        ControlleurListeRecette ctrlListe = new ControlleurListeRecette(livre);
+        ControleurListeRecette ctrlListe = new ControleurListeRecette(livre);
         listeRecetteLoader.setController(ctrlListe);
         Parent listeRecetteRoot = (Parent) listeRecetteLoader.load();
         listeRecette = new Scene(listeRecetteRoot);
@@ -72,7 +72,7 @@ public class Main extends Application {
         
         
         FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("RecetteScene.fxml"));
-        ControllerRecette ctrlRecette = new ControllerRecette();
+        ControleurRecette ctrlRecette = new ControleurRecette();
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
         listeRecette = new Scene(RecetteRoot);
