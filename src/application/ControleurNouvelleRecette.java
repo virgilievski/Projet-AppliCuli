@@ -20,11 +20,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-<<<<<<< HEAD
+
 import javafx.scene.control.Label;
-=======
+
 import javafx.scene.control.TableView;
->>>>>>> f0c6c2f9d686c1cf0c0ca5e4c00aa6a04a57889a
+
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -34,10 +34,7 @@ import javafx.stage.Stage;
 
 public class ControleurNouvelleRecette {
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> f0c6c2f9d686c1cf0c0ca5e4c00aa6a04a57889a
+
 	@FXML private Button btnsauvegarder;
 	@FXML private TextField nom;
 	@FXML private TextField saveur;
