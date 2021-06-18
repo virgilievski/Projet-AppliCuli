@@ -51,6 +51,7 @@ public class ControleurNouvelleRecette {
 	@FXML private Label labelNom;
 	@FXML private Label labelN;
 	@FXML private Label labelSav;
+	@FXML private Label labelEta2;
 	
 	private Livre livre;
 	private Scene listeRecette;
@@ -76,6 +77,14 @@ public class ControleurNouvelleRecette {
 		Stage s =(Stage) retour.getScene().getWindow(); 
 		s.setScene(listeRecette);
 		this.dragon.setImage(null);
+		k=0;
+		q=0;
+		labelIng.setText("");
+		labelEta.setText("");
+		labelN.setText("");
+		labelSav.setText("");
+		labelNom.setText("");
+		labelEta2.setText("");
 	}
 	
 	public void getListeRecette(Scene l) {
@@ -89,6 +98,7 @@ public class ControleurNouvelleRecette {
 			   k+=1;
 			   labelEta.setText("Nombre d'étapes : " +k);
 			   etapes.clear();
+			   labelEta2.setText("");
 		   }  
 	   }
 	   
@@ -173,6 +183,12 @@ public class ControleurNouvelleRecette {
 			   labelSav.setText("champ obligatoire :/");
 		   }else {
 			   labelSav.setText("");
+		   }
+		   if (k==0) {
+			   labelEta2.setText("ajoutez 1 étape au moins");
+		   }
+		   if (q==0) {
+			   labelN.setText("ajoutez 1 ingrédient au moins");
 		   }
 	   
 		   if (!(nom.getText().isEmpty() || saveur.getText().isEmpty()) && this.listEtape.size()>0 && this.listIngr.size()>0) {
