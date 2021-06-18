@@ -20,8 +20,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+
+
+import javafx.scene.control.Label;
+
+import javafx.scene.control.TableView;
+
+
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -45,6 +53,10 @@ public class ControleurNouvelleRecette {
 	@FXML private Label labelQ;
 	@FXML private Label labelIng;
 	@FXML private Label labelEta;
+	@FXML private Label labelNom;
+	@FXML private Label labelN;
+	@FXML private Label labelSav;
+	@FXML private Label labelEta2;
 	
 	private Livre livre;
 	private Scene listeRecette;
@@ -70,6 +82,14 @@ public class ControleurNouvelleRecette {
 		Stage s =(Stage) retour.getScene().getWindow(); 
 		s.setScene(listeRecette);
 		this.dragon.setImage(null);
+		k=0;
+		q=0;
+		labelIng.setText("");
+		labelEta.setText("");
+		labelN.setText("");
+		labelSav.setText("");
+		labelNom.setText("");
+		labelEta2.setText("");
 	}
 	
 	public void getListeRecette(Scene l) {
@@ -83,6 +103,7 @@ public class ControleurNouvelleRecette {
 			   k+=1;
 			   labelEta.setText("Nombre d'étapes : " +k);
 			   etapes.clear();
+			   labelEta2.setText("");
 		   }  
 	   }
 	   
@@ -96,8 +117,14 @@ public class ControleurNouvelleRecette {
 		   }
 		   
 		   else ing.mesure=mesure.getText();
+		   if (!ingredients.getText().isBlank()) {
+			   ing.nom=ingredients.getText();
+			   labelN.setText("");
+		   }
+		   else {
+			   labelN.setText("champ obligatoire :/");
+		   }
 		   
-		   ing.nom=ingredients.getText();
 		   
 		   
 		   if (quantite.getText().isEmpty()) {
@@ -151,17 +178,42 @@ public class ControleurNouvelleRecette {
 		   }
 		   if (!ingredients.getText().isEmpty()) {
 			   ingplus(event);
-		   }		   
+		   }
+		   if (nom.getText().isBlank()) {
+			   labelNom.setText("champ obligatoire :/");
+		   }else {
+			   labelNom.setText("");
+		   }
+		   if(saveur.getText().isBlank()) {
+			   labelSav.setText("champ obligatoire :/");
+		   }else {
+			   labelSav.setText("");
+		   }
+		   if (k==0) {
+			   labelEta2.setText("ajoutez 1 étape au moins");
+		   }
+		   if (q==0) {
+			   labelN.setText("ajoutez 1 ingrédient au moins");
+		   }
 	   
-		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() && this.listEtape.size()>0 && this.listIngr.size()>0) {
+		   if (!(nom.getText().isEmpty() || saveur.getText().isEmpty()) && this.listEtape.size()>0 && this.listIngr.size()>0) {
 			   this.r.nom = nom.getText();
 			   this.r.saveur = saveur.getText();
 			   this.r.list_ingredients=this.listIngr;
 			   this.r.list_etapes=this.listEtape;
-			   String rep="src/Image/";
-			   File newImage = new File(rep+nom.getText()+".png");
-			   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
-			   ImageIO.write(bi, "png", newImage);
+			   if (this.dragon.getImage() == null) {
+				   this.r.photo = null;
+			   }
+			   else {
+				   String rep="src/Image/";
+				   File newImage = new File(rep+nom.getText()+".png");
+				   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
+				   ImageIO.write(bi, "png", newImage);
+			   }
+			   k=0;
+			   q=0;
+			   labelEta.setText("");
+			   labelIng.setText("");
 			   this.r.recetteToFile();
 			   this.nom.clear();
 			   this.saveur.clear();
