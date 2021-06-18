@@ -34,26 +34,26 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="49.0" layoutY="122.0" prefHeight="28.0" prefWidth="185.0" text="Etapes :">
+      <Label layoutX="49.0" layoutY="143.0" prefHeight="28.0" prefWidth="185.0" text="Etapes :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="etapes" layoutX="49.0" layoutY="157.0" prefHeight="39.0" prefWidth="185.0" />
-      <Label layoutX="453.0" layoutY="137.0" prefHeight="26.0" prefWidth="185.0" text="Ingrédients :">
+      <TextField fx:id="etapes" layoutX="49.0" layoutY="177.0" prefHeight="39.0" prefWidth="185.0" />
+      <Label layoutX="453.0" layoutY="144.0" prefHeight="26.0" prefWidth="185.0" text="Ingrédients :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="ingredients" layoutX="535.0" layoutY="196.0" />
+      <TextField fx:id="ingredients" layoutX="513.0" layoutY="184.0" />
       <Label layoutX="49.0" layoutY="232.0" prefHeight="28.0" prefWidth="185.0" text="Image :">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="etplus" layoutX="234.0" layoutY="157.0" mnemonicParsing="false" onAction="#etaplus" prefHeight="39.0" prefWidth="75.0" text="+" />
+      <Button fx:id="etplus" layoutX="234.0" layoutY="177.0" mnemonicParsing="false" onAction="#etaplus" prefHeight="39.0" prefWidth="75.0" text="+" />
       <Button fx:id="ingplus" layoutX="437.0" layoutY="316.0" mnemonicParsing="false" onAction="#ingplus" prefHeight="39.0" prefWidth="265.0" text="+" />
-      <Label layoutX="438.0" layoutY="196.0" prefHeight="26.0" prefWidth="75.0" text="Nom :">
+      <Label layoutX="423.0" layoutY="184.0" prefHeight="26.0" prefWidth="75.0" text="Nom :">
          <font>
             <Font size="17.0" />
          </font></Label>
@@ -76,5 +76,8 @@
       <Label fx:id="labelEta" layoutX="60.0" layoutY="209.0" prefHeight="26.0" prefWidth="219.0" textFill="#009016" />
       <Label fx:id="labelQ" layoutX="591.0" layoutY="242.0" prefHeight="26.0" prefWidth="213.0" textFill="RED" />
       <Label fx:id="labelIng" layoutX="437.0" layoutY="363.0" prefHeight="26.0" prefWidth="265.0" textFill="#009016" />
+      <Label fx:id="labelNom" layoutX="49.0" layoutY="107.0" prefHeight="28.0" prefWidth="265.0" textFill="RED" />
+      <Label fx:id="labelSav" layoutX="453.0" layoutY="107.0" prefHeight="28.0" prefWidth="238.0" textFill="RED" />
+      <Label fx:id="labelN" layoutX="507.0" layoutY="214.0" prefHeight="26.0" prefWidth="238.0" textFill="RED" />
    </children>
 </AnchorPane>

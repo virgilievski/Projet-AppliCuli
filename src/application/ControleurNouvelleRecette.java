@@ -48,6 +48,9 @@ public class ControleurNouvelleRecette {
 	@FXML private Label labelQ;
 	@FXML private Label labelIng;
 	@FXML private Label labelEta;
+	@FXML private Label labelNom;
+	@FXML private Label labelN;
+	@FXML private Label labelSav;
 	
 	private Livre livre;
 	private Scene listeRecette;
@@ -99,8 +102,14 @@ public class ControleurNouvelleRecette {
 		   }
 		   
 		   else ing.mesure=mesure.getText();
+		   if (!ingredients.getText().isBlank()) {
+			   ing.nom=ingredients.getText();
+			   labelN.setText("");
+		   }
+		   else {
+			   labelN.setText("champ obligatoire :/");
+		   }
 		   
-		   ing.nom=ingredients.getText();
 		   
 		   
 		   if (quantite.getText().isEmpty()) {
@@ -156,15 +165,24 @@ public class ControleurNouvelleRecette {
 			   ingplus(event);
 		   }		   
 	   
-		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() && this.listEtape.size()>0 && this.listIngr.size()>0) {
+		   if (!(nom.getText().isEmpty() || saveur.getText().isEmpty()) && this.listEtape.size()>0 && this.listIngr.size()>0) {
 			   this.r.nom = nom.getText();
 			   this.r.saveur = saveur.getText();
 			   this.r.list_ingredients=this.listIngr;
 			   this.r.list_etapes=this.listEtape;
-			   String rep="src/Image/";
-			   File newImage = new File(rep+nom.getText()+".png");
-			   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
-			   ImageIO.write(bi, "png", newImage);
+			   if (this.dragon.getImage() == null) {
+				   this.r.photo = null;
+			   }
+			   else {
+				   String rep="src/Image/";
+				   File newImage = new File(rep+nom.getText()+".png");
+				   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
+				   ImageIO.write(bi, "png", newImage);
+			   }
+			   k=0;
+			   q=0;
+			   labelEta.setText("");
+			   labelIng.setText("");
 			   this.r.recetteToFile();
 			   this.nom.clear();
 			   this.saveur.clear();
