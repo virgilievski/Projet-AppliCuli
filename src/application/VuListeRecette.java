@@ -8,11 +8,11 @@ import javafx.scene.control.TableView;
 
 public class VuListeRecette implements Observer  {
 	private Livre livre;
-	private ControlleurListeRecette ctrl;
+	private ControleurListeRecette ctrl;
 	private TableView table;
 
 
-public VuListeRecette(Livre l, ControlleurListeRecette ctrl) {
+public VuListeRecette(Livre l, ControleurListeRecette ctrl) {
 	this.livre=l;
 	this.ctrl=ctrl;
 	this.table=ctrl.table;

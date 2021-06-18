@@ -59,7 +59,7 @@ public class ControleurNouvelleRecette {
 	public void retourListe(ActionEvent event) {
 		Stage s =(Stage) retour.getScene().getWindow(); 
 		s.setScene(listeRecette);
-
+		this.dragon.setImage(null);
 	}
 	
 	public void getListeRecette(Scene l) {
@@ -146,7 +146,8 @@ public class ControleurNouvelleRecette {
 			   this.saveur.clear();
 			   this.livre.ajoutRecette(r,c);
 			   this.listEtape.clear();
-			   this.listIngr.clear();	   
+			   this.listIngr.clear();	
+			   this.dragon.setImage(null);
 			   this.r=new Recette();
 			   
 			   Stage s =(Stage) btnsauvegarder.getScene().getWindow();
