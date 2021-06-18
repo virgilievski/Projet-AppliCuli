@@ -5,12 +5,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class ControlleurAcceuil {
+public class ControleurAccueil {
 	@FXML private Button lbr;
 	@FXML private Button nr;
 	private Scene listeRecette;
 	private Scene nouvelleRecette;
-	public ControlleurAcceuil() {
+	public ControleurAccueil() {
 
 	}
 

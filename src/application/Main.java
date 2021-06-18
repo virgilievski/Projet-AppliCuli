@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	
-	private Scene acceuil;
+	private Scene accueil;
 	private Scene listeRecette;
 	private Scene nouvelleRecette;
 	private Livre livre = new Livre();
@@ -41,21 +41,21 @@ public class Main extends Application {
         primaryStage.centerOnScreen();
 		
         
-        FXMLLoader acceuilLoader = new FXMLLoader(getClass().getResource("Appliculi.fxml"));
-        ControlleurAcceuil ctrlAcceuil = new ControlleurAcceuil();
-        acceuilLoader.setController(ctrlAcceuil);
+        FXMLLoader accueilLoader = new FXMLLoader(getClass().getResource("Appliculi.fxml"));
+        ControleurAccueil ctrlAccueil = new ControleurAccueil();
+        accueilLoader.setController(ctrlAccueil);
         
-        Parent acceuilRoot = (Parent) acceuilLoader.load();
-        acceuil = new Scene(acceuilRoot);
+        Parent accueilRoot = (Parent) accueilLoader.load();
+        accueil = new Scene(accueilRoot);
         
        
         FXMLLoader listeRecetteLoader = new FXMLLoader(getClass().getResource("listeRecette.fxml"));
-        ControlleurListeRecette ctrlListe = new ControlleurListeRecette(livre);
+        ControleurListeRecette ctrlListe = new ControleurListeRecette(livre);
         listeRecetteLoader.setController(ctrlListe);
         Parent listeRecetteRoot = (Parent) listeRecetteLoader.load();
         listeRecette = new Scene(listeRecetteRoot);
      
-        ctrlListe.getAcceuil(acceuil);
+        ctrlListe.getAccueil(accueil);
         
         
         FXMLLoader nouvelleRecetteloader = new FXMLLoader(getClass().getResource("StageNewReccette.fxml"));
@@ -67,18 +67,18 @@ public class Main extends Application {
         
         ctrlNouvelleRecette.getListeRecette(listeRecette);
         
-        ctrlAcceuil.getScene(listeRecette,nouvelleRecette);
+        ctrlAccueil.getScene(listeRecette,nouvelleRecette);
         ctrlListe.getNouvelleRecette(nouvelleRecette);
         ctrlNouvelleRecette.c=ctrlListe.vuListe;
         
         FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("RecetteScene.fxml"));
-        ControllerRecette ctrlRecette = new ControllerRecette();
+        ControleurRecette ctrlRecette = new ControleurRecette();
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
         listeRecette = new Scene(RecetteRoot);
         
-		acceuil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(acceuil);
+		accueil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(accueil);
 			primaryStage.getIcons().add(new Image("Image/icon.jpg"));
 			primaryStage.show();
 			primaryStage.setTitle("Culinarium");

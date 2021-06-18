@@ -2,11 +2,11 @@ package application;
 
 import Modele.Recette;
 
-public class ControllerRecette {
+public class ControleurRecette {
 	
 	public Recette r;
 	
-	public ControllerRecette() {
+	public ControleurRecette() {
 		this.r=new Recette();
 		
 	}

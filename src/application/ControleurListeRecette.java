@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -12,7 +13,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -22,7 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class ControlleurListeRecette implements Initializable{
+public class ControleurListeRecette implements Initializable{
 	
 	@FXML private Button btnrecherche;
 	@FXML private TextField barrerecherche;
@@ -30,29 +33,31 @@ public class ControlleurListeRecette implements Initializable{
 	@FXML public TableColumn<Recette ,String> tab1;
 	@FXML public TableColumn<Recette ,String> tab2;
 	private Livre livre;
-	private Scene Acceuil;
+	private Scene Accueil;
 	private Scene nouvelleRecette;
 	public VuListeRecette vuListe;
 	
-	public ControlleurListeRecette(Livre livre) {
+	public ControleurListeRecette(Livre livre) {
 		this.livre=livre;
 	}
 
-	public void getAcceuil(Scene acceuil) {
-		this.Acceuil=acceuil;	
+	public void getAccueil(Scene accueil) {
+		this.Accueil=accueil;	
 	}
 	
 	public void getNouvelleRecette(Scene nr) {
 		this.nouvelleRecette=nr;
 	}
 	
-	public void acceuilScene() {
+	public void accueilScene() {
 		
 		Stage s =(Stage) btnrecherche.getScene().getWindow();
-		s.setScene(Acceuil);
+		s.setScene(Accueil);
+		
 	}
-	public void clickcell(MouseEvent event) {
+	public void clickcell(MouseEvent event) throws IOException {
 		if (event.getClickCount() == 2) {
+			
 			System.out.print(table.getSelectionModel().getSelectedItem().nom);
 		}
 	}

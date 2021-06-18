@@ -38,6 +38,7 @@ public class ControleurNouvelleRecette {
 	@FXML private TextField etapes;
 	@FXML private Button etplus;
 	@FXML private Button ingplus;
+	@FXML private Button retour;
 	@FXML private TextField mesure;
 	@FXML private TextField quantite;
 	private Livre livre;
@@ -51,8 +52,14 @@ public class ControleurNouvelleRecette {
 	public ControleurNouvelleRecette(Livre l) {
 		this.livre=l;
 		this.r=new Recette();
-		this.listEtape=new ArrayList();
-		this.listIngr=new HashSet();
+		this.listEtape=new ArrayList<String>();
+		this.listIngr=new HashSet<Ingredient>();
+	}
+	
+	public void retourListe(ActionEvent event) {
+		Stage s =(Stage) retour.getScene().getWindow(); 
+		s.setScene(listeRecette);
+
 	}
 	
 	public void getListeRecette(Scene l) {
@@ -139,7 +146,7 @@ public class ControleurNouvelleRecette {
 			   this.saveur.clear();
 			   this.livre.ajoutRecette(r,c);
 			   this.listEtape.clear();
-			   this.listIngr.clear();
+			   this.listIngr.clear();	   
 			   this.r=new Recette();
 			   
 			   Stage s =(Stage) btnsauvegarder.getScene().getWindow();
