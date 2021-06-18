@@ -29,12 +29,13 @@ public class ControleurListeRecette implements Initializable{
 	
 	@FXML private Button btnrecherche;
 	@FXML private TextField barrerecherche;
-	@FXML private TableView<Recette> table;
-	@FXML private TableColumn<Recette ,String> tab1;
-	@FXML private TableColumn<Recette ,String> tab2;
+	@FXML public TableView<Recette> table;
+	@FXML public TableColumn<Recette ,String> tab1;
+	@FXML public TableColumn<Recette ,String> tab2;
 	private Livre livre;
 	private Scene Accueil;
 	private Scene nouvelleRecette;
+	public VuListeRecette vuListe;
 	
 	public ControleurListeRecette(Livre livre) {
 		this.livre=livre;
@@ -91,6 +92,9 @@ public class ControleurListeRecette implements Initializable{
 
 	
 		table.setItems(getRecette());
+		
+		this.vuListe = new VuListeRecette(this.livre, this);
+        this.livre.addObserver(this.vuListe);
 	}
 	
 	

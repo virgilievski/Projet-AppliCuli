@@ -29,6 +29,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class ControleurNouvelleRecette {
+	
+	private VuListeRecette vu;
 	@FXML private Button btnsauvegarder;
 	@FXML private TextField nom;
 	@FXML private TextField saveur;
@@ -45,6 +47,7 @@ public class ControleurNouvelleRecette {
 	private ArrayList<String> listEtape;
 	private Set<Ingredient> listIngr;
 	@FXML private ImageView dragon;
+	public VuListeRecette c;
 	
 	public ControleurNouvelleRecette(Livre l) {
 		this.livre=l;
@@ -56,7 +59,7 @@ public class ControleurNouvelleRecette {
 	public void retourListe(ActionEvent event) {
 		Stage s =(Stage) retour.getScene().getWindow(); 
 		s.setScene(listeRecette);
-
+		this.dragon.setImage(null);
 	}
 	
 	public void getListeRecette(Scene l) {
@@ -141,9 +144,10 @@ public class ControleurNouvelleRecette {
 			   this.r.recetteToFile();
 			   this.nom.clear();
 			   this.saveur.clear();
-			   this.livre.ajoutRecette(r);
+			   this.livre.ajoutRecette(r,c);
 			   this.listEtape.clear();
-			   this.listIngr.clear();	   
+			   this.listIngr.clear();	
+			   this.dragon.setImage(null);
 			   this.r=new Recette();
 			   
 			   Stage s =(Stage) btnsauvegarder.getScene().getWindow();

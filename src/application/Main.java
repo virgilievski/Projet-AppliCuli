@@ -69,7 +69,7 @@ public class Main extends Application {
         
         ctrlAccueil.getScene(listeRecette,nouvelleRecette);
         ctrlListe.getNouvelleRecette(nouvelleRecette);
-        
+        ctrlNouvelleRecette.c=ctrlListe.vuListe;
         
         FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("RecetteScene.fxml"));
         ControleurRecette ctrlRecette = new ControleurRecette();
