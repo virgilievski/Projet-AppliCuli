@@ -52,7 +52,7 @@
          </font>
       </Label>
       <Button fx:id="etplus" layoutX="234.0" layoutY="157.0" mnemonicParsing="false" onAction="#etaplus" prefHeight="39.0" prefWidth="75.0" text="+" />
-      <Button fx:id="ingplus" layoutX="437.0" layoutY="336.0" mnemonicParsing="false" onAction="#ingplus" prefHeight="39.0" prefWidth="265.0" text="+" />
+      <Button fx:id="ingplus" layoutX="437.0" layoutY="316.0" mnemonicParsing="false" onAction="#ingplus" prefHeight="39.0" prefWidth="265.0" text="+" />
       <Label layoutX="438.0" layoutY="196.0" prefHeight="26.0" prefWidth="75.0" text="Nom :">
          <font>
             <Font size="17.0" />
@@ -73,5 +73,8 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <Label fx:id="labelEta" layoutX="60.0" layoutY="209.0" prefHeight="26.0" prefWidth="219.0" textFill="#009016" />
+      <Label fx:id="labelQ" layoutX="591.0" layoutY="242.0" prefHeight="26.0" prefWidth="213.0" textFill="RED" />
+      <Label fx:id="labelIng" layoutX="437.0" layoutY="363.0" prefHeight="26.0" prefWidth="265.0" textFill="#009016" />
    </children>
 </AnchorPane>

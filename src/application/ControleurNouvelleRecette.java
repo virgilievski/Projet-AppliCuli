@@ -20,17 +20,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class ControleurNouvelleRecette {
 	
-	private VuListeRecette vu;
 	@FXML private Button btnsauvegarder;
 	@FXML private TextField nom;
 	@FXML private TextField saveur;
@@ -41,6 +40,10 @@ public class ControleurNouvelleRecette {
 	@FXML private Button retour;
 	@FXML private TextField mesure;
 	@FXML private TextField quantite;
+	@FXML private Label labelQ;
+	@FXML private Label labelIng;
+	@FXML private Label labelEta;
+	
 	private Livre livre;
 	private Scene listeRecette;
 	private Recette r;
@@ -49,11 +52,15 @@ public class ControleurNouvelleRecette {
 	@FXML private ImageView dragon;
 	public VuListeRecette c;
 	
+	private int k=0;
+	private int q=0;
+	
 	public ControleurNouvelleRecette(Livre l) {
 		this.livre=l;
 		this.r=new Recette();
 		this.listEtape=new ArrayList<String>();
 		this.listIngr=new HashSet<Ingredient>();
+		
 	}
 	
 	public void retourListe(ActionEvent event) {
@@ -70,6 +77,8 @@ public class ControleurNouvelleRecette {
 	public void etaplus(ActionEvent event) {
 		   if (!etapes.getText().isEmpty()) {
 			   this.listEtape.add(etapes.getText());
+			   k+=1;
+			   labelEta.setText("Nombre d'étapes : " +k);
 			   etapes.clear();
 		   }  
 	   }
@@ -77,6 +86,7 @@ public class ControleurNouvelleRecette {
 	public void ingplus(ActionEvent event) {
 		
 		   Ingredient ing = new Ingredient();
+		   boolean ok;
 		   
 		   if (mesure.getText().isEmpty()){
 			   ing.mesure=null;  
@@ -84,30 +94,38 @@ public class ControleurNouvelleRecette {
 		   
 		   else ing.mesure=mesure.getText();
 		   
-		   if (!(ingredients.getText().isEmpty() || quantite.getText().isEmpty())) {
-			   ing.nom=ingredients.getText();
-			   ing.quantite=Integer.parseInt(quantite.getText());
-			   this.listIngr.add(ing);
-			   ingredients.clear();
-			   mesure.clear();
-			   quantite.clear();
-			   quantite.setStyle("-fx-background-color: green;");
-			   ingredients.setStyle("-fx-background-color: green;");
-			   mesure.setStyle("-fx-background-color: green;");
+		   ing.nom=ingredients.getText();
+		   
+		   
+		   if (quantite.getText().isEmpty()) {
+			   labelQ.setText("Ne doit pas être vide");
+			   ok=false;
 			   
 		   }
 		   else {
-			   if (ingredients.getText().isEmpty()) {
-				   ingredients.setStyle("-fx-background-color: red;"); 
-			   
-			   }
-			   
-			   if (quantite.getText().isEmpty()) {
-			   quantite.setStyle("-fx-background-color: red;");
-			   }
+			    try{
+			    	ing.quantite=Integer.parseInt(quantite.getText());
+			    	this.listIngr.add(ing);
+			    	labelQ.setText("");
+			    	ok = true;
+			    }
+			    catch(NumberFormatException e) {
+			    	labelQ.setText("Dois être un nombre");
+			    	ok = false;
+			    	
+		   }   
 		   }
-		      
-	   }
+
+		   if(!ingredients.getText().isEmpty() && !quantite.getText().isEmpty() && ok) {
+			   q+=1;
+			   labelIng.setText("Nombre d'ingrédient : " +q);
+			   ingredients.clear();
+			   mesure.clear();
+			   quantite.clear();
+		   }
+			   
+	}
+	   
 	@FXML
 	private void handledragover(DragEvent event) {
 		if(event.getDragboard().hasFiles()) {
