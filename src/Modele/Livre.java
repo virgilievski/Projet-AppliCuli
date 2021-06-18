@@ -19,7 +19,7 @@ import java.util.TreeSet;
 
 
 public class Livre {
-	public HashMap<Integer,Recette> dico_recettes;
+	public HashMap<String,Recette> dico_recettes;
 	public int nb_recettes;
 	
 	public Livre() {
@@ -31,7 +31,8 @@ public class Livre {
 		File repertoire = new File(chemin);
 		File[] recettes = repertoire.listFiles();
 		for(int i=0; i< recettes.length; i++) {
-			this.dico_recettes.put(i,fileToRecette(recettes[i]) );
+			Recette r=fileToRecette(recettes[i]);
+			this.dico_recettes.put(r.nom,r );
 			this.nb_recettes+=1;	
 		}
 		
@@ -39,7 +40,7 @@ public class Livre {
 	
 	public void ajoutRecette(Recette r) {
 		this.nb_recettes+=1;
-		this.dico_recettes.put(this.nb_recettes, r);
+		this.dico_recettes.put(r.nom, r);
 		r.id=this.nb_recettes;
 		
 	}
@@ -69,7 +70,7 @@ public class Livre {
 	        ing.nom=part[0];
 	        ing.quantite=Integer.parseInt(part[1]);
 	        ing.mesure=part[2];
-	        r.list_ingredients.add(ing);
+	        r.list_ingredients.put(ing.nom, ing);
 	        	}
 
 	    String[] partsEtap = br.readLine().toString().split("/");
@@ -78,7 +79,7 @@ public class Livre {
 		    }
 	     
 	    r.photo = br.readLine().toString();
-		this.ajoutRecette(r); 
+		//this.ajoutRecette(r); 
 		fr.close();
 		
 		    }
@@ -96,7 +97,7 @@ public class Livre {
 		File repertoire = new File(chemin);
 		File[] recettes = repertoire.listFiles();
 		for(int i=0; i< recettes.length; i++) {
-			l.ajoutRecette(fileToRecette(recettes[i]));	
+			fileToRecette(recettes[i]);	//l.ajoutRecette(
 		}
 		return l;
 				

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -15,7 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Recette {
-	public Set<Ingredient> list_ingredients; 
+	public HashMap<String,Ingredient> list_ingredients; 
 	public ArrayList<String> list_etapes;
 	public String nom;
 	public String saveur;
@@ -31,7 +32,7 @@ public class Recette {
 				
 	}
 	public Recette() {
-		this.list_ingredients = new HashSet();
+		this.list_ingredients = new HashMap();
 		this.list_etapes=new ArrayList();
 		
 	}
@@ -40,26 +41,18 @@ public class Recette {
 	
 		
 	}
-	public ArrayList<String> getNomIngrédient() {
-		ArrayList<String> l = new ArrayList();
-		Set<Ingredient> i = this.list_ingredients;
-		Iterator it = i.iterator();
-		while (it.hasNext()) {
-			Ingredient ing =(Ingredient) it.next();
-			l.add(ing.nom);
-		}
 
 		
-		return l;
+	
 		
-	}
+	
 	public String getSaveur() {
 		return this.saveur;
 		
 	}
 	
 	public void Ajout_ingredient(Ingredient ing) {
-		this.list_ingredients.add(ing);
+		this.list_ingredients.put(ing.nom,ing);
 		
 	}
 	public void Ajout_etapes( String e) {
@@ -79,10 +72,9 @@ public class Recette {
 				PrintWriter writer = new PrintWriter(chemin);
 				writer.println(this.nom);
 				writer.println(this.saveur);
-			    Iterator<Ingredient> it0 = this.list_ingredients.iterator();
-			    while(it0.hasNext()) {
-			    	Ingredient h = it0.next();
-			       writer.print(h.nom+","+h.quantite+","+h.mesure+"/");
+				for (String i : this.list_ingredients.keySet()) {
+					Ingredient h =this.list_ingredients.get(i);
+					writer.print(h.nom+","+h.quantite+","+h.mesure+"/");
 				}
 			    writer.println();
 			    Iterator<String> it1 = this.list_etapes.iterator();

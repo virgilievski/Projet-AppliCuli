@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -62,7 +63,7 @@ public class ControleurNouvelleRecette {
 	private Scene listeRecette;
 	private Recette r;
 	private ArrayList<String> listEtape;
-	private Set<Ingredient> listIngr;
+	private HashMap<String,Ingredient> listIngr;
 	@FXML private ImageView dragon;
 	
 	public ControleurListeRecette ctrlLR;
@@ -74,7 +75,7 @@ public class ControleurNouvelleRecette {
 		this.livre=l;
 		this.r=new Recette();
 		this.listEtape=new ArrayList<String>();
-		this.listIngr=new HashSet<Ingredient>();
+		this.listIngr=new HashMap<String,Ingredient>();
 		
 	}
 	
@@ -135,7 +136,7 @@ public class ControleurNouvelleRecette {
 		   else {
 			    try{
 			    	ing.quantite=Integer.parseInt(quantite.getText());
-			    	this.listIngr.add(ing);
+			    	this.listIngr.put(ing.nom,ing);
 			    	labelQ.setText("");
 			    	ok = true;
 			    }

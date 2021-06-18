@@ -76,9 +76,28 @@ public class ControleurListeRecette implements Initializable{
 	    return recipes;
 	    }
 	
-	public void recherche(ActionEvent event) {
-		   
+	public ObservableList<Recette> recherche() {
+		   String motRecherche= barrerecherche.getText();
+		   ObservableList<Recette> recipes = FXCollections.observableArrayList();
+		   for (String key : this.livre.dico_recettes.keySet()) {
+			   //System.out.println(key.length());
+			   //System.out.println(motRecherche.length());
+
+			   if (key == motRecherche) {
+				   
+				   recipes.add(this.livre.dico_recettes.get(key));
+			   }
+			   else if (this.livre.dico_recettes.get(key).list_ingredients.containsKey(motRecherche)) {
+				   recipes.add(this.livre.dico_recettes.get(key));
+			   }
+			   
+			   
+			}
+		   return recipes;
 	   }
+	public void setUpRecherche(ActionEvent event) {
+		table.setItems(recherche());
+	}
 	
 
 
