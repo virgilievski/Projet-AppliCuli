@@ -16,9 +16,9 @@ import java.util.Observable;
 import java.util.Set;
 import java.util.TreeSet;
 
-import application.VuListeRecette;
 
-public class Livre extends Observable {
+
+public class Livre {
 	public HashMap<Integer,Recette> dico_recettes;
 	public int nb_recettes;
 	
@@ -44,13 +44,7 @@ public class Livre extends Observable {
 		
 	}
 	
-	public void ajoutRecette(Recette r, VuListeRecette c) {
-		this.nb_recettes+=1;
-		this.dico_recettes.put(this.nb_recettes, r);
-		r.id=this.nb_recettes;
-		this.notifyObservers(c);
-		
-	}
+
 	
 	public Recette fileToRecette(File fichier){
 		Recette r = new Recette();

@@ -33,6 +33,7 @@ public class Main extends Application {
 	private Scene accueil;
 	private Scene listeRecette;
 	private Scene nouvelleRecette;
+	private Scene recette;
 	private Livre livre = new Livre();
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -66,16 +67,16 @@ public class Main extends Application {
         
         
         ctrlNouvelleRecette.getListeRecette(listeRecette);
-        
+        ctrlNouvelleRecette.ctrlLR=ctrlListe;
         ctrlAccueil.getScene(listeRecette,nouvelleRecette);
         ctrlListe.getNouvelleRecette(nouvelleRecette);
-        ctrlNouvelleRecette.c=ctrlListe.vuListe;
+        
         
         FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("RecetteScene.fxml"));
         ControleurRecette ctrlRecette = new ControleurRecette();
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
-        listeRecette = new Scene(RecetteRoot);
+        recette = new Scene(RecetteRoot);
         
 		accueil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(accueil);

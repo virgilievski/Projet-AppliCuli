@@ -35,7 +35,7 @@ public class ControleurListeRecette implements Initializable{
 	private Livre livre;
 	private Scene Accueil;
 	private Scene nouvelleRecette;
-	public VuListeRecette vuListe;
+
 	
 	public ControleurListeRecette(Livre livre) {
 		this.livre=livre;
@@ -80,9 +80,7 @@ public class ControleurListeRecette implements Initializable{
 		   
 	   }
 	
-	public void update() {
-		table.setItems(getRecette());
-	}
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -93,8 +91,8 @@ public class ControleurListeRecette implements Initializable{
 	
 		table.setItems(getRecette());
 		
-		this.vuListe = new VuListeRecette(this.livre, this);
-        this.livre.addObserver(this.vuListe);
+		
+        
 	}
 	
 	
