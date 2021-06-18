@@ -20,7 +20,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+<<<<<<< HEAD
 import javafx.scene.control.Label;
+=======
+import javafx.scene.control.TableView;
+>>>>>>> f0c6c2f9d686c1cf0c0ca5e4c00aa6a04a57889a
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,6 +34,10 @@ import javafx.stage.Stage;
 
 public class ControleurNouvelleRecette {
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> f0c6c2f9d686c1cf0c0ca5e4c00aa6a04a57889a
 	@FXML private Button btnsauvegarder;
 	@FXML private TextField nom;
 	@FXML private TextField saveur;
@@ -50,7 +58,8 @@ public class ControleurNouvelleRecette {
 	private ArrayList<String> listEtape;
 	private Set<Ingredient> listIngr;
 	@FXML private ImageView dragon;
-	public VuListeRecette c;
+	
+	public ControleurListeRecette ctrlLR;
 	
 	private int k=0;
 	private int q=0;
@@ -162,12 +171,12 @@ public class ControleurNouvelleRecette {
 			   this.r.recetteToFile();
 			   this.nom.clear();
 			   this.saveur.clear();
-			   this.livre.ajoutRecette(r,c);
+			   this.livre.ajoutRecette(r);
 			   this.listEtape.clear();
 			   this.listIngr.clear();	
 			   this.dragon.setImage(null);
 			   this.r=new Recette();
-			   
+			   this.ctrlLR.table.setItems(this.ctrlLR.getRecette());
 			   Stage s =(Stage) btnsauvegarder.getScene().getWindow();
 			   s.setScene(listeRecette);
 		   }   
