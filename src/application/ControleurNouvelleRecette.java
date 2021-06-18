@@ -163,7 +163,17 @@ public class ControleurNouvelleRecette {
 		   }
 		   if (!ingredients.getText().isEmpty()) {
 			   ingplus(event);
-		   }		   
+		   }
+		   if (nom.getText().isBlank()) {
+			   labelNom.setText("champ obligatoire :/");
+		   }else {
+			   labelNom.setText("");
+		   }
+		   if(saveur.getText().isBlank()) {
+			   labelSav.setText("champ obligatoire :/");
+		   }else {
+			   labelSav.setText("");
+		   }
 	   
 		   if (!(nom.getText().isEmpty() || saveur.getText().isEmpty()) && this.listEtape.size()>0 && this.listIngr.size()>0) {
 			   this.r.nom = nom.getText();
