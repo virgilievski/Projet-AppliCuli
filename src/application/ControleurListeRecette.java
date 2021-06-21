@@ -83,7 +83,7 @@ public class ControleurListeRecette implements Initializable{
 			   //System.out.println(key.length());
 			   //System.out.println(motRecherche.length());
 
-			   if (key == motRecherche) {
+			   if (key.equals(motRecherche)) {
 				   
 				   recipes.add(this.livre.dico_recettes.get(key));
 			   }
