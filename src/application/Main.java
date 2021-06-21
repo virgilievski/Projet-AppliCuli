@@ -56,7 +56,7 @@ public class Main extends Application {
         Parent listeRecetteRoot = (Parent) listeRecetteLoader.load();
         listeRecette = new Scene(listeRecetteRoot);
      
-        ctrlListe.getAccueil(accueil);
+        
         
         
         FXMLLoader nouvelleRecetteloader = new FXMLLoader(getClass().getResource("StageNewReccette.fxml"));
@@ -66,31 +66,28 @@ public class Main extends Application {
         nouvelleRecette = new Scene(NouvelleRecetteRoot);
         
         
-        ctrlNouvelleRecette.getListeRecette(listeRecette);
-        ctrlNouvelleRecette.ctrlLR=ctrlListe;
-        ctrlAccueil.getScene(listeRecette,nouvelleRecette);
-        ctrlListe.getNouvelleRecette(nouvelleRecette);
-        
-        
         FXMLLoader RecetteSceneLoader = new FXMLLoader(getClass().getResource("RecetteScene.fxml"));
         ControleurRecette ctrlRecette = new ControleurRecette();
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
         recette = new Scene(RecetteRoot);
 
-        recette.getStylesheets().add(getClass().getResource("application2.css").toExternalForm());
+        ctrlListe.getScene(accueil,recette,nouvelleRecette);
 
-
+        ctrlNouvelleRecette.getListeRecette(listeRecette);
+        ctrlNouvelleRecette.ctrlLR=ctrlListe;
+        ctrlAccueil.getScene(listeRecette,nouvelleRecette);
+        ctrlListe.setCtrl(ctrlRecette);
         
+        
+        recette.getStylesheets().add(getClass().getResource("application2.css").toExternalForm());
 		accueil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(accueil);
-			primaryStage.getIcons().add(new Image("Image/icon.jpg"));
-			primaryStage.show();
-			primaryStage.setTitle("Culinarium");
-			primaryStage.setResizable(false);	
 		
-
-
+		primaryStage.setScene(accueil);
+		primaryStage.getIcons().add(new Image("Image/icon.jpg"));
+		primaryStage.show();
+		primaryStage.setTitle("Culinarium");
+		primaryStage.setResizable(false);	
 	}
 	
 	public static void main(String[] args) throws IOException {

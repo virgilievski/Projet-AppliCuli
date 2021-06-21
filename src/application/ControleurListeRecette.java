@@ -35,35 +35,40 @@ public class ControleurListeRecette implements Initializable{
 	private Livre livre;
 	private Scene Accueil;
 	private Scene nouvelleRecette;
-
+	private Scene recetteScene;
+	private ControleurRecette ctrlR;
 	
 	public ControleurListeRecette(Livre livre) {
 		this.livre=livre;
 	}
-
-	public void getAccueil(Scene accueil) {
+	
+	public void getScene(Scene accueil,Scene r,Scene nr) {
 		this.Accueil=accueil;	
+		this.recetteScene=r;
+		this.nouvelleRecette=nr;
 	}
 	
-	public void getNouvelleRecette(Scene nr) {
-		this.nouvelleRecette=nr;
+	public void setCtrl(ControleurRecette r) {
+		this.ctrlR=r;
 	}
 	
 	public void accueilScene() {
 		
 		Stage s =(Stage) btnrecherche.getScene().getWindow();
-		s.setScene(Accueil);
+		s.setScene(recetteScene);
 		
 	}
 	public void clickcell(MouseEvent event) throws IOException {
+		Stage s =(Stage) btnrecherche.getScene().getWindow();
 		if (event.getClickCount() == 2) {
-			
-			System.out.print(table.getSelectionModel().getSelectedItem().nom);
+			s.setScene(recetteScene);
+			ctrlR.update(table.getSelectionModel().getSelectedItem());
 		}
 	}
 	public void nouvelleRecetteScene() {
 		Stage s =(Stage) btnrecherche.getScene().getWindow(); 
 		s.setScene(nouvelleRecette);
+		
 	}
 	
 	public ObservableList<Recette> getRecette(){
