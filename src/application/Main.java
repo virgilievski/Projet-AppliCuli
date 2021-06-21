@@ -77,6 +77,7 @@ public class Main extends Application {
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
         recette = new Scene(RecetteRoot);
+
         recette.getStylesheets().add(getClass().getResource("application2.css").toExternalForm());
 
 

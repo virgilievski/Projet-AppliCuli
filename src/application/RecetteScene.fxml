@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="689.0" stylesheets="@application2.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -28,6 +28,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="14.0" layoutY="45.0" prefHeight="18.0" prefWidth="342.0" text="Label" />
+      <Label fx:id="etape" layoutX="14.0" layoutY="151.0" prefHeight="55.0" prefWidth="342.0" text="Etape 1 : " textFill="#f2eeee">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font></Label>
+      <Label fx:id="titre" layoutX="247.0" layoutY="61.0" prefHeight="46.0" prefWidth="206.0" textFill="#fdfcfc">
+         <font>
+            <Font name="Book Antiqua" size="36.0" />
+         </font></Label>
    </children>
 </AnchorPane>
