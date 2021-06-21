@@ -16,10 +16,10 @@ import java.util.Observable;
 import java.util.Set;
 import java.util.TreeSet;
 
-import application.VuListeRecette;
 
-public class Livre extends Observable {
-	public HashMap<Integer,Recette> dico_recettes;
+
+public class Livre {
+	public HashMap<String,Recette> dico_recettes;
 	public int nb_recettes;
 	
 	public Livre() {
@@ -31,7 +31,8 @@ public class Livre extends Observable {
 		File repertoire = new File(chemin);
 		File[] recettes = repertoire.listFiles();
 		for(int i=0; i< recettes.length; i++) {
-			this.dico_recettes.put(i,fileToRecette(recettes[i]) );
+			Recette r=fileToRecette(recettes[i]);
+			this.dico_recettes.put(r.nom,r );
 			this.nb_recettes+=1;	
 		}
 		
@@ -39,18 +40,12 @@ public class Livre extends Observable {
 	
 	public void ajoutRecette(Recette r) {
 		this.nb_recettes+=1;
-		this.dico_recettes.put(this.nb_recettes, r);
+		this.dico_recettes.put(r.nom, r);
 		r.id=this.nb_recettes;
 		
 	}
 	
-	public void ajoutRecette(Recette r, VuListeRecette c) {
-		this.nb_recettes+=1;
-		this.dico_recettes.put(this.nb_recettes, r);
-		r.id=this.nb_recettes;
-		this.notifyObservers(c);
-		
-	}
+
 	
 	public Recette fileToRecette(File fichier){
 		Recette r = new Recette();
@@ -75,7 +70,7 @@ public class Livre extends Observable {
 	        ing.nom=part[0];
 	        ing.quantite=Integer.parseInt(part[1]);
 	        ing.mesure=part[2];
-	        r.list_ingredients.add(ing);
+	        r.list_ingredients.put(ing.nom, ing);
 	        	}
 
 	    String[] partsEtap = br.readLine().toString().split("/");
@@ -84,7 +79,7 @@ public class Livre extends Observable {
 		    }
 	     
 	    r.photo = br.readLine().toString();
-		this.ajoutRecette(r); 
+		//this.ajoutRecette(r); 
 		fr.close();
 		
 		    }
@@ -102,7 +97,7 @@ public class Livre extends Observable {
 		File repertoire = new File(chemin);
 		File[] recettes = repertoire.listFiles();
 		for(int i=0; i< recettes.length; i++) {
-			l.ajoutRecette(fileToRecette(recettes[i]));	
+			fileToRecette(recettes[i]);	//l.ajoutRecette(
 		}
 		return l;
 				

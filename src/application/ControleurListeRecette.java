@@ -35,7 +35,7 @@ public class ControleurListeRecette implements Initializable{
 	private Livre livre;
 	private Scene Accueil;
 	private Scene nouvelleRecette;
-	public VuListeRecette vuListe;
+
 	
 	public ControleurListeRecette(Livre livre) {
 		this.livre=livre;
@@ -76,13 +76,30 @@ public class ControleurListeRecette implements Initializable{
 	    return recipes;
 	    }
 	
-	public void recherche(ActionEvent event) {
-		   
+	public ObservableList<Recette> recherche() {
+		   String motRecherche= barrerecherche.getText();
+		   ObservableList<Recette> recipes = FXCollections.observableArrayList();
+		   for (String key : this.livre.dico_recettes.keySet()) {
+			   //System.out.println(key.length());
+			   //System.out.println(motRecherche.length());
+
+			   if (key == motRecherche) {
+				   
+				   recipes.add(this.livre.dico_recettes.get(key));
+			   }
+			   else if (this.livre.dico_recettes.get(key).list_ingredients.containsKey(motRecherche)) {
+				   recipes.add(this.livre.dico_recettes.get(key));
+			   }
+			   
+			   
+			}
+		   return recipes;
 	   }
-	
-	public void update() {
-		table.setItems(getRecette());
+	public void setUpRecherche(ActionEvent event) {
+		table.setItems(recherche());
 	}
+	
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -93,8 +110,8 @@ public class ControleurListeRecette implements Initializable{
 	
 		table.setItems(getRecette());
 		
-		this.vuListe = new VuListeRecette(this.livre, this);
-        this.livre.addObserver(this.vuListe);
+		
+        
 	}
 	
 	

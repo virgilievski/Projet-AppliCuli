@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,17 +21,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+
+import javafx.scene.control.Label;
+
+import javafx.scene.control.TableView;
+
+
+import javafx.scene.control.Label;
+
+import javafx.scene.control.TableView;
+
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class ControleurNouvelleRecette {
 	
-	private VuListeRecette vu;
+
 	@FXML private Button btnsauvegarder;
 	@FXML private TextField nom;
 	@FXML private TextField saveur;
@@ -41,25 +51,46 @@ public class ControleurNouvelleRecette {
 	@FXML private Button retour;
 	@FXML private TextField mesure;
 	@FXML private TextField quantite;
+	@FXML private Label labelQ;
+	@FXML private Label labelIng;
+	@FXML private Label labelEta;
+	@FXML private Label labelNom;
+	@FXML private Label labelN;
+	@FXML private Label labelSav;
+	@FXML private Label labelEta2;
+	
 	private Livre livre;
 	private Scene listeRecette;
 	private Recette r;
 	private ArrayList<String> listEtape;
-	private Set<Ingredient> listIngr;
+	private HashMap<String,Ingredient> listIngr;
 	@FXML private ImageView dragon;
-	public VuListeRecette c;
+	
+	public ControleurListeRecette ctrlLR;
+	
+	private int k=0;
+	private int q=0;
 	
 	public ControleurNouvelleRecette(Livre l) {
 		this.livre=l;
 		this.r=new Recette();
 		this.listEtape=new ArrayList<String>();
-		this.listIngr=new HashSet<Ingredient>();
+		this.listIngr=new HashMap<String,Ingredient>();
+		
 	}
 	
 	public void retourListe(ActionEvent event) {
 		Stage s =(Stage) retour.getScene().getWindow(); 
 		s.setScene(listeRecette);
 		this.dragon.setImage(null);
+		k=0;
+		q=0;
+		labelIng.setText("");
+		labelEta.setText("");
+		labelN.setText("");
+		labelSav.setText("");
+		labelNom.setText("");
+		labelEta2.setText("");
 	}
 	
 	public void getListeRecette(Scene l) {
@@ -70,44 +101,62 @@ public class ControleurNouvelleRecette {
 	public void etaplus(ActionEvent event) {
 		   if (!etapes.getText().isEmpty()) {
 			   this.listEtape.add(etapes.getText());
+			   k+=1;
+			   labelEta.setText("Nombre d'étapes : " +k);
 			   etapes.clear();
+			   labelEta2.setText("");
 		   }  
 	   }
 	   
 	public void ingplus(ActionEvent event) {
 		
 		   Ingredient ing = new Ingredient();
+		   boolean ok;
 		   
 		   if (mesure.getText().isEmpty()){
 			   ing.mesure=null;  
 		   }
 		   
 		   else ing.mesure=mesure.getText();
-		   
-		   if (!(ingredients.getText().isEmpty() || quantite.getText().isEmpty())) {
+		   if (!ingredients.getText().isBlank()) {
 			   ing.nom=ingredients.getText();
-			   ing.quantite=Integer.parseInt(quantite.getText());
-			   this.listIngr.add(ing);
-			   ingredients.clear();
-			   mesure.clear();
-			   quantite.clear();
-			   quantite.setStyle("-fx-background-color: green;");
-			   ingredients.setStyle("-fx-background-color: green;");
-			   mesure.setStyle("-fx-background-color: green;");
+			   labelN.setText("");
+		   }
+		   else {
+			   labelN.setText("champ obligatoire :/");
+		   }
+		   
+		   
+		   
+		   if (quantite.getText().isEmpty()) {
+			   labelQ.setText("Ne doit pas être vide");
+			   ok=false;
 			   
 		   }
 		   else {
-			   if (ingredients.getText().isEmpty()) {
-				   ingredients.setStyle("-fx-background-color: red;"); 
-			   
-			   }
-			   
-			   if (quantite.getText().isEmpty()) {
-			   quantite.setStyle("-fx-background-color: red;");
-			   }
+			    try{
+			    	ing.quantite=Integer.parseInt(quantite.getText());
+			    	this.listIngr.put(ing.nom,ing);
+			    	labelQ.setText("");
+			    	ok = true;
+			    }
+			    catch(NumberFormatException e) {
+			    	labelQ.setText("Dois être un nombre");
+			    	ok = false;
+			    	
+		   }   
 		   }
-		      
-	   }
+
+		   if(!ingredients.getText().isEmpty() && !quantite.getText().isEmpty() && ok) {
+			   q+=1;
+			   labelIng.setText("Nombre d'ingrédient : " +q);
+			   ingredients.clear();
+			   mesure.clear();
+			   quantite.clear();
+		   }
+			   
+	}
+	   
 	@FXML
 	private void handledragover(DragEvent event) {
 		if(event.getDragboard().hasFiles()) {
@@ -130,26 +179,51 @@ public class ControleurNouvelleRecette {
 		   }
 		   if (!ingredients.getText().isEmpty()) {
 			   ingplus(event);
-		   }		   
+		   }
+		   if (nom.getText().isBlank()) {
+			   labelNom.setText("champ obligatoire :/");
+		   }else {
+			   labelNom.setText("");
+		   }
+		   if(saveur.getText().isBlank()) {
+			   labelSav.setText("champ obligatoire :/");
+		   }else {
+			   labelSav.setText("");
+		   }
+		   if (k==0) {
+			   labelEta2.setText("ajoutez 1 étape au moins");
+		   }
+		   if (q==0) {
+			   labelN.setText("ajoutez 1 ingrédient au moins");
+		   }
 	   
-		   if (!(nom.getText().isEmpty()) || saveur.getText().isEmpty() && this.listEtape.size()>0 && this.listIngr.size()>0) {
+		   if (!(nom.getText().isEmpty() || saveur.getText().isEmpty()) && this.listEtape.size()>0 && this.listIngr.size()>0) {
 			   this.r.nom = nom.getText();
 			   this.r.saveur = saveur.getText();
 			   this.r.list_ingredients=this.listIngr;
 			   this.r.list_etapes=this.listEtape;
-			   String rep="src/Image/";
-			   File newImage = new File(rep+nom.getText()+".png");
-			   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
-			   ImageIO.write(bi, "png", newImage);
+			   if (this.dragon.getImage() == null) {
+				   this.r.photo = null;
+			   }
+			   else {
+				   String rep="src/Image/";
+				   File newImage = new File(rep+nom.getText()+".png");
+				   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
+				   ImageIO.write(bi, "png", newImage);
+			   }
+			   k=0;
+			   q=0;
+			   labelEta.setText("");
+			   labelIng.setText("");
 			   this.r.recetteToFile();
 			   this.nom.clear();
 			   this.saveur.clear();
-			   this.livre.ajoutRecette(r,c);
+			   this.livre.ajoutRecette(r);
 			   this.listEtape.clear();
 			   this.listIngr.clear();	
 			   this.dragon.setImage(null);
 			   this.r=new Recette();
-			   
+			   this.ctrlLR.table.setItems(this.ctrlLR.getRecette());
 			   Stage s =(Stage) btnsauvegarder.getScene().getWindow();
 			   s.setScene(listeRecette);
 		   }   
