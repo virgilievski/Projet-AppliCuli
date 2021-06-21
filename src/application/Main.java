@@ -33,6 +33,7 @@ public class Main extends Application {
 	private Scene accueil;
 	private Scene listeRecette;
 	private Scene nouvelleRecette;
+	private Scene recette;
 	private Livre livre = new Livre();
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -75,7 +76,8 @@ public class Main extends Application {
         ControleurRecette ctrlRecette = new ControleurRecette();
         RecetteSceneLoader.setController(ctrlRecette);
         Parent RecetteRoot = (Parent) RecetteSceneLoader.load();
-        listeRecette = new Scene(RecetteRoot);
+        recette = new Scene(RecetteRoot);
+        //recette.getStylesheets().add(getClass().getResource("application2.css").toExternalForm());
         
 		accueil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(accueil);
@@ -83,7 +85,6 @@ public class Main extends Application {
 			primaryStage.show();
 			primaryStage.setTitle("Culinarium");
 			primaryStage.setResizable(false);	
-		
 		
 
 
