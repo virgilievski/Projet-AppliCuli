@@ -3,12 +3,14 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.Set;
 
 import Modele.Ingredient;
 import Modele.Livre;
 import Modele.Recette;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,6 +34,7 @@ public class ControleurListeRecette implements Initializable{
 	@FXML public TableView<Recette> table;
 	@FXML public TableColumn<Recette ,String> tab1;
 	@FXML public TableColumn<Recette ,String> tab2;
+
 	private Livre livre;
 	private Scene Accueil;
 	private Scene nouvelleRecette;
@@ -111,6 +114,7 @@ public class ControleurListeRecette implements Initializable{
 		// TODO Auto-generated method stub
 		tab1.setCellValueFactory(new PropertyValueFactory<Recette,String>("nom"));
 		tab2.setCellValueFactory(new PropertyValueFactory<Recette,String>("saveur"));
+		
 
 	
 		table.setItems(getRecette());
