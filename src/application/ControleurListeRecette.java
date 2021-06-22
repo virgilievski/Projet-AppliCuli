@@ -21,9 +21,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -34,7 +36,7 @@ public class ControleurListeRecette implements Initializable{
 	@FXML public TableView<Recette> table;
 	@FXML public TableColumn<Recette ,String> tab1;
 	@FXML public TableColumn<Recette ,String> tab2;
-
+	@FXML public Button btnsup;
 	private Livre livre;
 	private Scene Accueil;
 	private Scene nouvelleRecette;
@@ -63,9 +65,16 @@ public class ControleurListeRecette implements Initializable{
 	}
 	public void clickcell(MouseEvent event) throws IOException {
 		Stage s =(Stage) btnrecherche.getScene().getWindow();
-		if (event.getClickCount() == 2) {
+		
+		btnsup.setVisible(false);
+		if (event.getClickCount() == 2 && !table.getSelectionModel().isEmpty() && event.getButton()==MouseButton.PRIMARY) {
 			s.setScene(recetteScene);
 			ctrlR.update(table.getSelectionModel().getSelectedItem());
+		}
+		else if (!table.getSelectionModel().isEmpty() && event.getButton()==MouseButton.SECONDARY){
+			btnsup.setVisible(true);
+			btnsup.setLayoutX(event.getSceneX());
+			btnsup.setLayoutY(event.getSceneY()-10);
 		}
 	}
 	public void nouvelleRecetteScene() {
@@ -104,10 +113,15 @@ public class ControleurListeRecette implements Initializable{
 		   return recipes;
 	   }
 	public void setUpRecherche(ActionEvent event) {
+		btnsup.setVisible(false);
 		table.setItems(recherche());
 	}
 	
-
+	public void supprimerRecette(ActionEvent event) throws IOException {
+		this.livre.supprimerRecette(table.getSelectionModel().getSelectedItem());
+		btnsup.setVisible(false);
+		table.setItems(getRecette());;
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

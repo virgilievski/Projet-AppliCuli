@@ -41,5 +41,6 @@
             <TableColumn fx:id="tab2" editable="false" prefWidth="244.0" text="Saveur" />
         </columns>
       </TableView>
+      <Button fx:id="btnsup" layoutX="86.0" layoutY="52.0" mnemonicParsing="false" onAction="#supprimerRecette" text="Supprimer" visible="false" />
    </children>
 </AnchorPane>

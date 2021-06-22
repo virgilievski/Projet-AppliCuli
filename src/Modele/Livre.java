@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -45,7 +47,14 @@ public class Livre {
 		
 	}
 	
-
+	public void supprimerRecette(Recette r) throws IOException {
+		if (this.dico_recettes.containsKey(r.nom)){
+			System.out.println(Files.deleteIfExists(Paths.get("Recettes/"+r.nom+".txt")));
+			System.out.println(Files.deleteIfExists(Paths.get("src/Image/"+r.nom+".png")));
+			
+			this.dico_recettes.remove(r.nom);
+		}
+	}
 	
 	public Recette fileToRecette(File fichier){
 		Recette r = new Recette();
@@ -79,7 +88,7 @@ public class Livre {
 		    }
 	     
 	    r.photo = br.readLine().toString();
-		//this.ajoutRecette(r); 
+
 		fr.close();
 		
 		    }
@@ -105,29 +114,14 @@ public class Livre {
 	public ArrayList<Recette> liste(){
 		ArrayList<Recette> l = new ArrayList<Recette>();
 		//boucle for sur le repertoire "Recettes", on applique la fonction fileToRecette à chaque élément pour pouvoir récup le nom des recettes qu'on affichera dans la fenetre 
-		String rep = "Recettes";
-		File file = new File(rep);
-		String chemin = file.getAbsolutePath();
-		File repertoire = new File(chemin);
-		File[] recettes = repertoire.listFiles();
-		for(int i=0; i< recettes.length; i++) {
-			l.add(fileToRecette(recettes[i]));
+		for (String key : this.dico_recettes.keySet()) {
+			l.add(this.dico_recettes.get(key));
 		}
+		
 		return l;
 	}
 	
-	public ArrayList<Recette>  alaUne() {
-		ArrayList<Recette> tab = new ArrayList<Recette>();
-		
-		if (this.nb_recettes>5) {
-			for (int i=0;i<5;i+=1) {
-				tab.add(this.dico_recettes.get(this.nb_recettes-1-i));
-				
-			}
-				
-		}
-		return tab;
-	}
+
 
 
 	
