@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -95,20 +96,12 @@ public class ControleurListeRecette implements Initializable{
 	
 	public ObservableList<Recette> recherche() {
 		   String motRecherche= barrerecherche.getText();
-		   ObservableList<Recette> recipes = FXCollections.observableArrayList();
+		   ObservableList<Recette> recipes = FXCollections.observableArrayList();	   
+		   if (this.livre.dico_recettes.containsKey(motRecherche))  recipes.add(this.livre.dico_recettes.get(motRecherche));
 		   for (String key : this.livre.dico_recettes.keySet()) {
-			   //System.out.println(key.length());
-			   //System.out.println(motRecherche.length());
-
-			   if (key.equals(motRecherche)) {
-				   
+			   if (this.livre.dico_recettes.get(key).list_ingredients.containsKey(motRecherche)) {
 				   recipes.add(this.livre.dico_recettes.get(key));
-			   }
-			   else if (this.livre.dico_recettes.get(key).list_ingredients.containsKey(motRecherche)) {
-				   recipes.add(this.livre.dico_recettes.get(key));
-			   }
-			   
-			   
+			   }	   
 			}
 		   return recipes;
 	   }

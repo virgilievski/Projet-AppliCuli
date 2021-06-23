@@ -87,7 +87,7 @@ public class Main extends Application {
 		primaryStage.getIcons().add(new Image("Image/icon.jpg"));
 		primaryStage.show();
 		primaryStage.setTitle("Culinarium");
-		primaryStage.setResizable(false);	
+		primaryStage.setResizable(false);		
 	}
 	
 	public static void main(String[] args) throws IOException {
