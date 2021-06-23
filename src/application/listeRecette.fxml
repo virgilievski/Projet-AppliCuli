@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -20,17 +19,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#nouvelleRecetteScene" text="Nouvelle recette" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Trier">
-            <items>
-                  <CheckMenuItem mnemonicParsing="false" text="Par Nom" />
-                  <CheckMenuItem mnemonicParsing="false" text="Par Saveur" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Filtrer">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
         </menus>
       </MenuBar>
       <TextField fx:id="barrerecherche" layoutX="401.0" layoutY="52.0" />
@@ -42,5 +30,6 @@
         </columns>
       </TableView>
       <Button fx:id="btnsup" layoutX="86.0" layoutY="52.0" mnemonicParsing="false" onAction="#supprimerRecette" text="Supprimer" visible="false" />
+      <Button layoutX="23.0" layoutY="52.0" mnemonicParsing="false" onAction="#nouvelleRecetteScene" text="Nouvelle Recette" />
    </children>
 </AnchorPane>

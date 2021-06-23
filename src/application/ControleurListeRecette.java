@@ -60,7 +60,7 @@ public class ControleurListeRecette implements Initializable{
 	public void accueilScene() {
 		
 		Stage s =(Stage) btnrecherche.getScene().getWindow();
-		s.setScene(recetteScene);
+		s.setScene(Accueil);
 		
 	}
 	public void clickcell(MouseEvent event) throws IOException {

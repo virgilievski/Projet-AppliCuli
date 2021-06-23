@@ -78,7 +78,7 @@ public class Main extends Application {
         ctrlNouvelleRecette.ctrlLR=ctrlListe;
         ctrlAccueil.getScene(listeRecette,nouvelleRecette);
         ctrlListe.setCtrl(ctrlRecette);
-        
+        ctrlRecette.setScenes(accueil, listeRecette);
         
         recette.getStylesheets().add(getClass().getResource("application2.css").toExternalForm());
 		accueil.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
