@@ -68,6 +68,7 @@ public class ControleurListeRecette implements Initializable{
 		Stage s =(Stage) btnrecherche.getScene().getWindow();
 		
 		btnsup.setVisible(false);
+		
 		if (event.getClickCount() == 2 && !table.getSelectionModel().isEmpty() && event.getButton()==MouseButton.PRIMARY) {
 			s.setScene(recetteScene);
 			ctrlR.update(table.getSelectionModel().getSelectedItem());
@@ -94,6 +95,8 @@ public class ControleurListeRecette implements Initializable{
 	    return recipes;
 	    }
 	
+		
+		
 	public ObservableList<Recette> recherche() {
 		   String motRecherche= barrerecherche.getText();
 		   ObservableList<Recette> recipes = FXCollections.observableArrayList();	   
