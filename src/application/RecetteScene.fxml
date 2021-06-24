@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -25,5 +26,13 @@
             <Font name="Cantarell Bold" size="50.0" />
          </font></Label>
       <ImageView fx:id="image" fitHeight="215.0" fitWidth="289.0" layoutX="256.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="titre" layoutX="175.0" layoutY="67.0" prefHeight="63.0" prefWidth="275.0" textFill="#464646">
+         <font>
+            <Font name="Cantarell Bold" size="50.0" />
+         </font></Label>
+      <ImageView fx:id="image" fitHeight="131.0" fitWidth="181.0" layoutX="450.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="suivant" layoutX="370.0" layoutY="384.0" mnemonicParsing="false" text="suivant" />
+      <Label fx:id="etapas" layoutX="162.0" layoutY="185.0" prefHeight="180.0" prefWidth="476.0" />
+      <Button fx:id="precedent" layoutX="220.0" layoutY="384.0" mnemonicParsing="false" text="precedent" />
    </children>
 </AnchorPane>
