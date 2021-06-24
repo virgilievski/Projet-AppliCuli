@@ -1,6 +1,7 @@
 package application;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import Modele.Recette;
 import javafx.event.ActionEvent;
@@ -24,6 +25,8 @@ public class ControleurRecette  {
 	@FXML private Button suivant;
 	@FXML private Button precedent;
 
+	public Recette rec ;
+	public int a = 0;
 	private Scene accueil;
 	private Scene liste;
 	public ControleurRecette() {
@@ -45,6 +48,7 @@ public class ControleurRecette  {
 	}
 	public void update(Recette r) {
 
+		rec = r;
 		titre.setText(r.nom);
 		File file = new File(r.photo);
 		System.out.println(file.toString());
@@ -52,11 +56,25 @@ public class ControleurRecette  {
 		System.out.println(im);
 		image.setImage(im);
 		ArrayList<?> etapes=r.list_etapes;
-		etapas.setText((String) etapes.get(0));
+		etapas.setText((String) etapes.get(a));
+		}
+	public void suiv(ActionEvent e){
+		ArrayList<?> etapes=rec.list_etapes;
+		try {
+			a+=1;
+			etapas.setText((String) etapes.get(a));
+		}catch(IndexOutOfBoundsException b) {
+			a=etapes.size()-1;
 		}
 	}
+	public void prec(ActionEvent e) {
+		try {
+			a-=1;
+			ArrayList<?> etapes=rec.list_etapes;
+			etapas.setText((String) etapes.get(a));
+		}catch(IndexOutOfBoundsException b) {
+			a=0;
+		}
+	}
+}
 	
-
-
-	
-
