@@ -210,6 +210,7 @@ public class ControleurNouvelleRecette {
 				   File newImage = new File(rep+nom.getText()+".png");
 				   BufferedImage bi = SwingFXUtils.fromFXImage(dragon.getImage(), null);
 				   ImageIO.write(bi, "png", newImage);
+				   this.r.photo = newImage.toString();
 			   }
 			   k=0;
 			   q=0;
