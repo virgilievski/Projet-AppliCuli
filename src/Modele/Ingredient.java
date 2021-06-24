@@ -23,12 +23,17 @@ public class Ingredient {
 	public String toString() {
 		int a=Math.round(this.quantite);
 		String b=""+this.quantite;
+		String c=this.mesure;
+		
+		if (this.mesure.equals("null")) {
+			c="";
+		}
 		if (this.quantite - a==0) {
 			b=""+a;
-			System.out.print("oui");
+			
 		}
 		
-		return this.nom+" "+this.quantite+" "+this.mesure;
+		return this.nom+" "+b+" "+c;
 	}
 
 }

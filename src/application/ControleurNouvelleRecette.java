@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.imageio.ImageIO;
@@ -203,8 +205,14 @@ public class ControleurNouvelleRecette {
 			   for (int i=0; i<this.listEtape.size();i++) {
 				   this.r.list_etapes.add(this.listEtape.get(i));
 			   }
+			   
+			  this.r.list_ingredients=this.listIngr;
+			   //for (Map.Entry mapentry : this.listIngr.entrySet()) {
+				 //  this.r.list_ingredients.put(this.listIngr.get(mapentry).nom,this.listIngr.get(mapentry));
+		                             
+		        }
 			   for (int i=0; i<this.listIngr.size();i++) {
-				   this.r.list_ingredients.put(this.listIngr.get(i).nom,this.listIngr.get(i));
+				   
 			   }
 			   this.r.saveur = saveur.getText();
 			   
@@ -241,4 +249,4 @@ public class ControleurNouvelleRecette {
 	   
 	
 
-}
+

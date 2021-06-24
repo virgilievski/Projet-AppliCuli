@@ -28,7 +28,7 @@
             <Font name="Cantarell Bold" size="30.0" />
          </font></Label>
       <ImageView fx:id="image" fitHeight="122.0" fitWidth="167.0" layoutX="461.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="suivant" layoutX="431.0" layoutY="458.0" mnemonicParsing="false" onAction="#suiv" prefHeight="41.0" prefWidth="62.0">
+      <Button fx:id="suivant" layoutX="428.0" layoutY="479.0" mnemonicParsing="false" onAction="#suiv" prefHeight="41.0" prefWidth="62.0">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,8 +36,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label fx:id="etapas" layoutX="163.0" layoutY="321.0" prefHeight="106.0" prefWidth="476.0" />
-      <Button fx:id="precedent" layoutX="302.0" layoutY="457.0" mnemonicParsing="false" onAction="#prec" prefHeight="42.0" prefWidth="62.0">
+      <Label fx:id="etapas" layoutX="163.0" layoutY="388.0" prefHeight="91.0" prefWidth="476.0" />
+      <Button fx:id="precedent" layoutX="315.0" layoutY="479.0" mnemonicParsing="false" onAction="#prec" prefHeight="42.0" prefWidth="62.0">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,8 +45,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label fx:id="ingredients" layoutX="163.0" layoutY="197.0" prefHeight="63.0" prefWidth="476.0" />
-      <Label fx:id="titreEtape" layoutX="187.0" layoutY="292.0" prefHeight="29.0" prefWidth="149.0">
+      <Label fx:id="ingredients" layoutX="163.0" layoutY="127.0" prefHeight="238.0" prefWidth="476.0" />
+      <Label fx:id="titreEtape" layoutX="172.0" layoutY="373.0" prefHeight="29.0" prefWidth="149.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
