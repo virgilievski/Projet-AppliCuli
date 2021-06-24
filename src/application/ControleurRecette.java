@@ -39,11 +39,13 @@ public class ControleurRecette  {
 		this.liste=b;
 	}
 	public void accueilScene(ActionEvent e) {
+		a=0;
 		Stage s =(Stage) image.getScene().getWindow();
 		s.setScene(accueil);
 		
 	}
 	public void listeScene(ActionEvent e) {
+		a=0;
 		Stage s =(Stage) image.getScene().getWindow();
 		s.setScene(liste);
 	}
