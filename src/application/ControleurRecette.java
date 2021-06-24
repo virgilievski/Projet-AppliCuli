@@ -19,9 +19,10 @@ import javafx.stage.Stage;
 
 public class ControleurRecette  {
 	@FXML private Label etapas;
+	@FXML private Label titreEtape;
 	@FXML private Label titre;
 	@FXML private ImageView image;
-	@FXML private TextField ingredients;
+	@FXML private Label ingredients;
 	@FXML private Button suivant;
 	@FXML private Button precedent;
 
@@ -47,7 +48,8 @@ public class ControleurRecette  {
 		s.setScene(liste);
 	}
 	public void update(Recette r) {
-
+	
+		titreEtape.setText("Etape"+(a+1)+":");
 		rec = r;
 		titre.setWrapText(true);
 		titre.setText(r.nom);
@@ -57,25 +59,28 @@ public class ControleurRecette  {
 		System.out.println(im);
 		image.setImage(im);
 		ArrayList<?> etapes=r.list_etapes;
+		etapas.setWrapText(true);
 		etapas.setText((String) etapes.get(a));
 		}
 	public void suiv(ActionEvent e){
+		titreEtape.setText("Etape"+(a+1)+":");
 		ArrayList<?> etapes=rec.list_etapes;
 		try {
 			a+=1;
 			etapas.setWrapText(true);
 			etapas.setText((String) etapes.get(a));
-		}catch(IndexOutOfBoundsException b) {
+		}catch(IndexOutOfBoundsException c) {
 			a=etapes.size()-1;
 		}
 	}
 	public void prec(ActionEvent e) {
+		titreEtape.setText("Etape"+(a+1)+":");
 		try {
 			a-=1;
 			etapas.setWrapText(true);
 			ArrayList<?> etapes=rec.list_etapes;
 			etapas.setText((String) etapes.get(a));
-		}catch(IndexOutOfBoundsException b) {
+		}catch(IndexOutOfBoundsException c) {
 			a=0;
 		}
 	}
