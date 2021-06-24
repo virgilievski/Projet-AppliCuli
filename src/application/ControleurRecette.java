@@ -49,6 +49,7 @@ public class ControleurRecette  {
 	public void update(Recette r) {
 
 		rec = r;
+		titre.setWrapText(true);
 		titre.setText(r.nom);
 		File file = new File(r.photo);
 		System.out.println(file.toString());
@@ -62,6 +63,7 @@ public class ControleurRecette  {
 		ArrayList<?> etapes=rec.list_etapes;
 		try {
 			a+=1;
+			etapas.setWrapText(true);
 			etapas.setText((String) etapes.get(a));
 		}catch(IndexOutOfBoundsException b) {
 			a=etapes.size()-1;
@@ -70,6 +72,7 @@ public class ControleurRecette  {
 	public void prec(ActionEvent e) {
 		try {
 			a-=1;
+			etapas.setWrapText(true);
 			ArrayList<?> etapes=rec.list_etapes;
 			etapas.setText((String) etapes.get(a));
 		}catch(IndexOutOfBoundsException b) {

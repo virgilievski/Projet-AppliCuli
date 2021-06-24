@@ -22,16 +22,12 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label fx:id="titre" layoutX="160.0" layoutY="24.0" prefHeight="154.0" prefWidth="478.0" textFill="#464646">
+      <ImageView fx:id="image" fitHeight="131.0" fitWidth="202.0" layoutX="436.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="titre" layoutX="175.0" layoutY="67.0" prefHeight="63.0" prefWidth="250.0" textFill="#464646">
          <font>
             <Font name="Cantarell Bold" size="50.0" />
          </font></Label>
-      <ImageView fx:id="image" fitHeight="215.0" fitWidth="289.0" layoutX="256.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="titre" layoutX="175.0" layoutY="67.0" prefHeight="63.0" prefWidth="275.0" textFill="#464646">
-         <font>
-            <Font name="Cantarell Bold" size="50.0" />
-         </font></Label>
-      <ImageView fx:id="image" fitHeight="131.0" fitWidth="181.0" layoutX="450.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image" fitHeight="131.0" fitWidth="181.0" layoutX="447.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="suivant" layoutX="431.0" layoutY="458.0" mnemonicParsing="false" onAction="#suiv" prefHeight="41.0" prefWidth="62.0">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -40,7 +36,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label fx:id="etapas" layoutX="162.0" layoutY="185.0" prefHeight="180.0" prefWidth="476.0" />
+      <Label fx:id="etapas" layoutX="163.0" layoutY="321.0" prefHeight="106.0" prefWidth="476.0" />
       <Button fx:id="precedent" layoutX="302.0" layoutY="457.0" mnemonicParsing="false" onAction="#prec" prefHeight="42.0" prefWidth="62.0">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -49,5 +45,6 @@
                </image>
             </ImageView>
          </graphic></Button>
+      <Label fx:id="ingredients" layoutX="163.0" layoutY="197.0" prefHeight="63.0" prefWidth="476.0" />
    </children>
 </AnchorPane>
