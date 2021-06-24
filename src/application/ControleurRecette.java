@@ -31,12 +31,14 @@ public class ControleurRecette  {
 	public void accueilScene(ActionEvent e) {
 		Stage s =(Stage) tabPane.getScene().getWindow();
 		s.setScene(accueil);
+		
 	}
 	public void listeScene(ActionEvent e) {
 		Stage s =(Stage) tabPane.getScene().getWindow();
 		s.setScene(liste);
 	}
 	public void update(Recette r) {
+		System.out.print(r.nom);
 		titre.setText(r.nom);
 		File file = new File("src/Image"+r.photo);
 		Image im = new Image(file.toURI().toString());
