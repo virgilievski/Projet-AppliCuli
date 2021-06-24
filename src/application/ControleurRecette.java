@@ -49,10 +49,8 @@ public class ControleurRecette  {
 	}
 	public void update(Recette r) {
 
-	
-		titreEtape.setText("Etape"+(a+1)+":");
+		titreEtape.setText("Etape "+(a+1)+":");
 
-		int i;
 
 		rec = r;
 		titre.setWrapText(true);
@@ -67,31 +65,36 @@ public class ControleurRecette  {
 		etapas.setText((String) etapes.get(a));
 		
 		ingredients.setWrapText(true);
-		for(i=0; i<=r.list_ingredients.size(); i++) {
-			ingredients.setText("-"+r.list_ingredients.get(i).nom +" "+ r.list_ingredients.get(i).quantite+" "+ r.list_ingredients.get(i).mesure+ "\n");
-		}
+//		for(int i=0; i<=r.list_ingredients.size(); i++) {
+//			ingredients.setText(r.list_ingredients.get(i).toString());
+//		}
 		}
 	public void suiv(ActionEvent e){
-		titreEtape.setText("Etape"+(a+1)+":");
+
 		ArrayList<?> etapes=rec.list_etapes;
+
 		try {
 			a+=1;
 			etapas.setWrapText(true);
 			etapas.setText((String) etapes.get(a));
+			titreEtape.setText("Etape "+(a+1)+":");
 		}catch(IndexOutOfBoundsException c) {
 			a=etapes.size()-1;
 		}
 	}
 	public void prec(ActionEvent e) {
-		titreEtape.setText("Etape"+(a+1)+":");
 		try {
 			a-=1;
 			etapas.setWrapText(true);
 			ArrayList<?> etapes=rec.list_etapes;
 			etapas.setText((String) etapes.get(a));
+			titreEtape.setText("Etape "+(a+1)+":");
 		}catch(IndexOutOfBoundsException c) {
 			a=0;
 		}
 	}
 }
 	
+
+
+

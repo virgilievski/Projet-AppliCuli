@@ -1,5 +1,0 @@
-Galette Bretonnes complètes
-Salé
-Gruyère,300,g/Farine de blé,150,g/Oeufs,4,null/Huile,2,cuillère à soupe/Eau,1,L/Farine de blé noir,500,g/Sel,2,Cuillère à café/Jambon,15,tranches/
-Hacher le jambon./Malaxer la farine avec l'huile, l'oeuf et le sel puis verser l'eau petit à petit. La pâte doit être fluide./Laisser reposer 1 heure puis les cuire dans une poêle bien chaude légèrement graissée./Retourner la crêpe et casser un oeuf dessus. Ajouter l'équivalent d'1/2 tranche de jambon et 10 g de gruyère./Lorsque le blanc d'oeuf est cuit, repliez les côtés de la crêpes vers le centre. Saler, poivrer et servir./
-src\Image\Galette Bretonnes complètes.png

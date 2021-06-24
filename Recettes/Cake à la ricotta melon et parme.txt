@@ -1,0 +1,5 @@
+Cake à la ricotta melon et parme
+Salé
+pignons de pin,100.0,g/Oeufs,2.0,null/Farine,180.0,g/Basilic,1.0,bouquet/Olives,5.0,cuillères à soupe/Jambon de parme,8.0,tranches/Sel,10.0,mg/Levure,3.0,g/Ricotta,250.0,g/Poivre,10.0,mg/Melon,1.0,null/
+Découpez la chair du melon en tout petits cubes, et laissez dégorger dans une passoire avec du sel, le temps de préparer le cake./Préchauffez le four à 250°C (th. 8-9)./Mélangez au fouet les oeufs et la ricotta, puis ajoutez la farine, la levure, les feuilles de basilic ciselées, les pignons de pin, le jambon de parme coupé en petit morceaux, les brisures de vingt olives./Salez et poivrez./ Egouttez le melon sur du papier absorbant, et ajoutez-le à la préparation./Badigeonnez un plat à cake d'huile d'olive, et versez la pâte dans le moule, décorez avec les olives restantes./Baissez le four à 180°C, et enfournez votre cake pendant 1 h./Laissez-le tiédir 15 min./
+src/Image/Cake à la ricotta melon et parme.png

@@ -1,5 +1,0 @@
-Brownie
-Sucré
-Chocolat Patissier,250,g/Sucre Vanillé,1,sachet/Oeufs,3,null/Beurre,150,g/Farine,60,g/sel,2,pincées/Sucre,150,g/
-Faites fondre le chocolat cassé en morceaux avec le beurre. /Pendant ce temps, battez les oeufs avec le sucre jusqu'à ce que le mélange blanchisse. /Ajoutez la farine, le sucre vanillé, et ajoutez le chocolat. /Versez le tout dans un moule, et enfournez à 180°C (thermostat 6)pendant 15 min... /
-src\Image\Brownie.png

@@ -1,0 +1,5 @@
+T-bone de beau grillé
+Salé
+Romarin,1.0,branche/T-bone,400.0,g/Beurre,30.0,g/Miel,1.0,Cuillère à soupe/Jus de veau,30.0,cl/petits pois ,600.0,g/Olives,12.0,null/Sucre,1.0,Cuillère à café/Citron confit au sel,1.0,null/Huile d'Olive,5.0,cl/sel et poivre,10.0,mg/
+Assaisonnez les T-Bone, faites-les saisir 2 min de chaque côté sur feu vif dans une grande poêle avec l?huile d?olive. Baissez le feu, laissez-les cuire 10 min de chaque côté./Faites fondre le beurre dans une casserole. Ajoutez les petits pois et le sucre. Enrobez-les bien dans le beurre sucré, versez le jus de veau, ajoutez le romarin, salez, poivrez./Couvrez les petits pois avec une feuille de papier sulfurisé, faites-les cuire 10 min sur feu moyen./Retirez les T-Bone de la poêle, déposez-les dans un plat, couvrez-les avec une feuille de papier aluminium./Coupez le citron et les olives en petits morceaux, retirez les pépins du citron./Dégraissez la poêle, mettez le miel, les morceaux de citron et d?olives dans la poêle, faites cuire 2 min sur feu moyen en remuant./Répartissez le citron et les olives sur les T-Bone, servez avec les petits pois et le jus au romarin./
+src/Image/T-bone de beau grillé.png
