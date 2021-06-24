@@ -172,7 +172,7 @@ public class ControleurNouvelleRecette {
 	    }
 	
     public void save(ActionEvent event) throws IOException {
-
+    		
 		   
 		   if (!etapes.getText().isEmpty()){
 			   etaplus(event);
@@ -199,9 +199,16 @@ public class ControleurNouvelleRecette {
 	   
 		   if (!(nom.getText().isEmpty() || saveur.getText().isEmpty()) && this.listEtape.size()>0 && this.listIngr.size()>0) {
 			   this.r.nom = nom.getText();
+			   
+			   for (int i=0; i<this.listEtape.size();i++) {
+				   this.r.list_etapes.add(this.listEtape.get(i));
+			   }
+			   for (int i=0; i<this.listIngr.size();i++) {
+				   this.r.list_ingredients.put(this.listIngr.get(i).nom,this.listIngr.get(i));
+			   }
 			   this.r.saveur = saveur.getText();
-			   this.r.list_ingredients=this.listIngr;
-			   this.r.list_etapes=this.listEtape;
+			   
+			   
 			   if (this.dragon.getImage() == null) {
 				   this.r.photo = null;
 			   }
@@ -220,8 +227,10 @@ public class ControleurNouvelleRecette {
 			   this.nom.clear();
 			   this.saveur.clear();
 			   this.livre.ajoutRecette(r);
+			   
 			   this.listEtape.clear();
-			   this.listIngr.clear();	
+			   this.listIngr.clear();
+			   System.out.print(this.livre.dico_recettes.get(this.r.nom).list_etapes);	
 			   this.dragon.setImage(null);
 			   this.r=new Recette();
 			   this.ctrlLR.table.setItems(this.ctrlLR.getRecette());

@@ -3,6 +3,8 @@ package application;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
+
 import Modele.Recette;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,7 +52,7 @@ public class ControleurRecette  {
 		s.setScene(liste);
 	}
 	public void update(Recette r) {
-
+		
 		titreEtape.setText("Etape "+(a+1)+":");
 
 
@@ -58,17 +60,23 @@ public class ControleurRecette  {
 		titre.setWrapText(true);
 		titre.setText(r.nom);
 		File file = new File(r.photo);
-		Image im = new Image(file.toURI().toString());
+		Image im = new Image(file.toURI().toString());	
 		image.setImage(im);
-		ArrayList<?> etapes=r.list_etapes;
+		ArrayList<String> etapes=r.list_etapes;
 		etapas.setWrapText(true);
-		etapas.setText((String) etapes.get(a));
+		etapas.setText(r.list_etapes.get(a));
 		
 		ingredients.setWrapText(true);
-//		for(int i=0; i<=r.list_ingredients.size(); i++) {
-//			ingredients.setText(r.list_ingredients.get(i).toString());
-//		}
+		
+		String ing="";
+		for (Map.Entry mapentry : r.list_ingredients.entrySet()) {
+			ing+=(r.list_ingredients.get(mapentry.getKey()).toString())+"\n"; 
+			
+	                             
+	        }
+		this.ingredients.setText(ing);
 		}
+		
 	public void suiv(ActionEvent e){
 
 		ArrayList<?> etapes=rec.list_etapes;
