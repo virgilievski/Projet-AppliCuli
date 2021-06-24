@@ -1,0 +1,5 @@
+Dorade coco
+Salé
+Curry,2.0,cuillères à café/Lait de coco,1.0,boite/Oignon,1.0,null/Sel,10.0,mg/Dorades,2.0,null/Coriandre,1.0,tige/Huile d'olive,20.0,mg/
+Préparer le mélange lait de coco, oignon émincé et curry./Mettre les dorades dans un plat huilé./"Farcir" et recouvrir les dorades avec le mélange. Saler./Enfourner à four chaud à 180°C (thermostat 6) pendant 20 à 30 minutes selon la taille des dorades./Saupoudrer de coriandre fraîche et servir accompagné de riz./
+src/Image/Dorade coco.png

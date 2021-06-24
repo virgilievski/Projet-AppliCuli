@@ -1,0 +1,5 @@
+Abuelita querida
+Salé
+Crème fraiche,20.0,cl/Galettes bretonnes,1.0,paquet/Fromage de chèvre,200.0,g/Chorizo fort,1.0,null/Basilic ,1.0,bouquet/Salade,1.0,null/
+Couper le chorizo en petits morceaux, mais pas trop fins./Mélanger le fromage de chèvre avec la crème./Ajouter le chorizo, et bien mélanger. /Si la consistance du mélange est trop dure, ajouter encore un peu de crème. Attention, il ne faut pas que le mélange soit liquide !/Couper ensuite les galettes, de manière à ce qu'elles aient à peu près la forme d'un rectangle. (le haut suffit en général)/Disposer de la salade émincée, du basilic, le mélange fromage/chorizo, au centre de la galette./Rouler ensuite de façon à avoir un boudin, et couper de petits tronçons./
+src/Image/Abuelita querida.png

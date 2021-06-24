@@ -1,0 +1,5 @@
+Spaghetti bolognaise
+Salé
+Sauce tomate,200.0,g/Boeuf haché,400.0,g/Celeri,1.0,branche/Parmesan,50.0,g/Spaghetti,500.0,g/Origan,2.0,cuillère à soupe/Oignons,3.0,null/Harissa,1.0,pointe/Thym,5.0,Branche/
+Hachez la sauge, le basilic et le persil./Hachez les oignons, découpez le céleri en cubes./Détaillez les champignons en cubes également./Faites chauffer 3 cuillerées à soupe d'huile d'olive dans une cocotte, mettez-y les oignons, le céleri et les champignons./Ajoutez l'ail écrasé, le concentré de tomate, la sauce tomate, la viande hachée et pressez bien le tout./Ajoutez alors le thym et le laurier, mouillez de 50 cl d'eau, rajoutez les herbes fraîches hachées, 2 morceaux de sucre, la harissa, assaisonner./Laissez mijoter 30 min à feu doux./10 minutes avant la fin, faites cuire les pâtes al dente./Egouttez-les pâtes, mélangez-les avec un peu de beurre./Retirez le laurier de la sauce, versez-la sur les pâtes./Parsemez de parmesan et servez./
+src/Image/Spaghetti bolognaise.png

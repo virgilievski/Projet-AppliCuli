@@ -1,0 +1,5 @@
+Gratin Dauphinois
+Salé
+Muscade,50.0,mg/Lait,1.0,l/Beurre,100.0,g/Crème,30.0,cl/Sel,50.0,mg/Patates,1.5,kg/Gousses d'ail,2.0,null/Poivre,50.0,ml/
+Eplucher, laver et couper les pommes de terre en rondelles fines (NB : ne pas les laver APRES les avoir coupées, car l'amidon est nécessaire à une consistance correcte)./Hacher l'ail très finement./Porter à ébullition dans une casserole le lait, l'ail, le sel, le poivre et la muscade puis y plonger les pommes de terre et laisser cuire 10 à 15 min, selon leur fermeté./Préchauffer le four à 180°C (thermostat 6) et beurrer un plat à gratin./Placer les pommes de terre égouttées dans le plat. Les recouvrir de crème, puis disposer des petites noix de beurre sur le dessus./Enfourner pour 50 min à 1 heure de cuisson./
+src/Image/Gratin Dauphinois.png

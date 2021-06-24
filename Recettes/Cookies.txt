@@ -1,0 +1,5 @@
+Cookies
+Sucré
+Oeufs,2.0,null/Beurre,250.0,g/Farine,350.0,g/Levure en poudre,1.0,cuillère à café/Sel,20.0,mg/Chocolat,300.0,g/Sucre semoule,125.0,g/Sucre brun,125.0,g/
+Travaillez le beurre mou avec les deux sucres jusqu'à obtention d'un mélange homogène./Ajoutez les ?ufs et mélangez bien./Joignez la farine tamisée, le sel et la levure en poudre./Mélangez à nouveau./Rajoutez les pépites de chocolat et mélangez./Recouvrez le plateau du four de papier cuisson ou sulfurisé, et à l'aide de 2 cuillères à café, disposez-y des petits tas de pâte de la valeur d'une noix./Veillez à bien les espacer car la pâte s'étale assez fort./Enfournez et comptez une dizaine de minutes de cuisson (four préchauffé à 180°C)./Laissez les cookies cuits sur une grille pour les laisser refroidir./Bon appétit !/
+src/Image/Cookies.png

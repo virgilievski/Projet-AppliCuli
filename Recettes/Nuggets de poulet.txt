@@ -1,0 +1,5 @@
+Nuggets de poulet
+Salé
+Blancs d'oeuf,4.0,null/Escalopes de poulet,4.0,null/Chapelure,500.0,g/poivre et sel,50.0,mg/
+Mixez 4 escalopes de poulet avec 4 blancs d'?ufs puis ajouter le sel et le poivre./Avec une cuillère à soupe formez des petites boulettes avec ce mélange./Roulez les boulettes dans la chapelure afin de les recouvrir./Dans une poêle, faire chauffer de l'huile et mettre les nuggets à cuire./Retournez les nuggets au bout de 4 à 5 min (quand ils sont bien dorés). /Vous pouvez servir !/
+src/Image/Nuggets de poulet.png

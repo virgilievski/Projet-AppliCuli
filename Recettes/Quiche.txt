@@ -1,0 +1,5 @@
+Quiche
+Salé
+Crème fraiche,10.0,cl/Gruyère rapé,100.0,g/Lait,0.25,l/Oeufs,3.0,null/Farine,2.0,cuillère à soupe/Jambon,4.0,tranches/
+Mixez tous les ingrédients sauf le jambon, le découper en morceaux et mélanger ensuite avec le reste./Placez dans un plat a tarte beurré et faites cuire une dmi-heure à 200°C./
+src/Image/Quiche.png

@@ -1,0 +1,5 @@
+Risotto aux poireaux
+Salé
+crème fraiche,200.0,g/vin blanc sec,1.0,verre/Beurre,200.0,g/Poireaux de belle taille,3.0,null/Riz pour risotto,4.0,louches/Parmesan rapé,200.0,cg/kub Or,1.0,cube/
+Emincer le blanc des poireaux. /Faire fondre le bouillon cube dans 0.75 litre d'eau bouillante. /Faire fondre 25 g de beurre dans une casserole ou une sauteuse à revêtement anti adhésif. /Mettre les poireaux à étuver sans qu'ils brunissent (5 mn environ). /Ajouter le riz. Remuer et laisser le riz devenir translucide sur feu vif. /Ajouter le vin blanc et attendre qu'il s'évapore. /Ajouter le bouillon, baisser le feu, et attendre qu'il soit totalement absorbé (environ 20 mn). /A la fin, ajouter 3 cuillères à soupe de crème fraîche, du poivre et du parmesan râpé. Remuer la préparation, puis la laisser reposer 3 mn hors du feu, avec un couvercle. /Goûter pour vérifier s'il est nécessaire de saler (le bouillon et le fromage l'étant déjà). Servir bien chaud./
+src/Image/Risotto aux poireaux.png

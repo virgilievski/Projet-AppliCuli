@@ -1,0 +1,5 @@
+Pancakes
+Sucré
+Lait,30.0,cl/Oeufs,2.0,null/Beurre,65.0,g/Farine,250.0,g/Levure,1.0,sachet/Sucre semoule,30.0,g/
+Faire fondre le beurre, dans une casserole à feu doux ou dans un bol au micro-ondes. /Mettre la farine, la levure et le sucre dans un saladier. Mélanger et creuser un puits. /Ajouter ensuite les oeufs entiers et fouetter l'ensemble./Incorporer le beurre fondu, fouetter puis délayer progressivement le mélange avec le lait afin d'éviter les grumeaux./Laisser reposer la pâte au minimum 1 heure au réfrigérateur./Dans une poêle chaude et légèrement huilée, faire cuire comme des crêpes, mais en les faisant plus petites. Réserver au chaud et déguster./
+src/Image/Pancakes.png

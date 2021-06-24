@@ -1,0 +1,5 @@
+Flan
+Sucré
+Lait,1.0,l/Oeufs,4.0,null/Maizena,90.0,g/Sucre en poudre,150.0,g/Pate brisée,1.0,null/Gousse de vanille,1.0,null/
+Faire bouillir le lait avec la gousse de vanille fendue (dans le sens de la longueur)./Pendant ce temps, mélanger la Maïzena (tamisée, c'est mieux) avec le sucre./et ajouter les oeufs bien battus./Mélanger le tout (bien homogène) /et ajouter le lait bouillant (sans la gousse)./Cuire la préparation à feu doux sans cesser de remuer pendant environ 1 à 2 min/Préchauffer le four à 200°C (thermostat 6-7). Foncer un plat rectangulaire ou rond préalablement beurré avec la pâte brisée./Piquer le fond./Y verser la préparation./Lisser la surface./Cuire pendant environ 30 à 40 min./Laisser refroidir./Déguster./
+src/Image/Flan.png
