@@ -104,8 +104,14 @@ public class ControleurListeRecette implements Initializable{
 		   for (String key : this.livre.dico_recettes.keySet()) {
 			   if (this.livre.dico_recettes.get(key).list_ingredients.containsKey(motRecherche)) {
 				   recipes.add(this.livre.dico_recettes.get(key));
-			   }	   
+			   }
+			   
 			}
+		   if (motRecherche.equals("")) {
+			   for (String key : this.livre.dico_recettes.keySet()) {
+				   recipes.add(this.livre.dico_recettes.get(key));
+			   }
+		   }
 		   return recipes;
 	   }
 	public void setUpRecherche(ActionEvent event) {
