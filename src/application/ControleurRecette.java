@@ -21,7 +21,7 @@ public class ControleurRecette  {
 	@FXML private Label etapas;
 	@FXML private Label titre;
 	@FXML private ImageView image;
-	@FXML private TextField ingredients;
+	@FXML private Label ingredients;
 	@FXML private Button suivant;
 	@FXML private Button precedent;
 
@@ -47,7 +47,7 @@ public class ControleurRecette  {
 		s.setScene(liste);
 	}
 	public void update(Recette r) {
-
+		int i;
 		rec = r;
 		titre.setWrapText(true);
 		titre.setText(r.nom);
@@ -58,6 +58,11 @@ public class ControleurRecette  {
 		image.setImage(im);
 		ArrayList<?> etapes=r.list_etapes;
 		etapas.setText((String) etapes.get(a));
+		
+		ingredients.setWrapText(true);
+		for(i=0; i<=r.list_ingredients.size(); i++) {
+			ingredients.setText("-"+r.list_ingredients.get(i).nom +" "+ r.list_ingredients.get(i).quantite+" "+ r.list_ingredients.get(i).mesure+ "\n");
+		}
 		}
 	public void suiv(ActionEvent e){
 		ArrayList<?> etapes=rec.list_etapes;
