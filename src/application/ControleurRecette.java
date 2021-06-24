@@ -58,9 +58,7 @@ public class ControleurRecette  {
 		titre.setWrapText(true);
 		titre.setText(r.nom);
 		File file = new File(r.photo);
-		System.out.println(file.toString());
 		Image im = new Image(file.toURI().toString());
-		System.out.println(im);
 		image.setImage(im);
 		ArrayList<?> etapes=r.list_etapes;
 		etapas.setWrapText(true);
