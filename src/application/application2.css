@@ -1,4 +1,4 @@
 .root{
-
-
+	-fx-background-image:url('backgroundrecette.png');
+	-fx-background-size:cover;
 	}
