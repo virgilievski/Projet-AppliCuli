@@ -1,0 +1,5 @@
+Quatre-quart
+sucré
+Extrait de vanille,1.0,cuillère à café/Oeufs,3.0,null/Beurre,140.0,g/Levure chimique,0.5,paquet/Farine,140.0,g/Rhum,1.0,cuillère à soupe/Sel,1.0,pincée/Sucre,140.0,g/citron,1.0,null/
+Préchauffez le four th.6 (180°C). Mettez dans une jatte les oeufs, battez-les au fouet puis incorporez le sucre en poudre, la farine tamisée, la levure, la pincée de sel et le beurre fondu. Pour ajouter une petite saveur en plus à votre quatre quart, vous pouvez ajouter, au choix, de l'extrait de vanille, du rhum ou un zeste de citron. Mélangez bien le tout afin d'obtenir un mélange bien lisse et homogène./Beurrez et farinez un moule à cake et versez-y la pâte. Enfournez environ 40 min. Surveillez la cuisson à l'aide d'un couteau, ce dernier enfoncé au coeur du gâteau devra ressortir sec quand le gâteau sera parfaitement cuit./
+src\Image\Quatre-quart.png
