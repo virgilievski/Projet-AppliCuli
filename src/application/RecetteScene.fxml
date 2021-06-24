@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -31,8 +32,18 @@
             <Font name="Cantarell Bold" size="50.0" />
          </font></Label>
       <ImageView fx:id="image" fitHeight="131.0" fitWidth="181.0" layoutX="450.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="suivant" layoutX="370.0" layoutY="384.0" mnemonicParsing="false" text="suivant" />
+      <Button fx:id="suivant" layoutX="431.0" layoutY="458.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="62.0" />
       <Label fx:id="etapas" layoutX="162.0" layoutY="185.0" prefHeight="180.0" prefWidth="476.0" />
-      <Button fx:id="precedent" layoutX="220.0" layoutY="384.0" mnemonicParsing="false" text="precedent" />
+      <Button fx:id="precedent" layoutX="302.0" layoutY="457.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="62.0" />
+      <ImageView fitHeight="32.0" fitWidth="50.0" layoutX="308.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Images/flèche%20précédent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="437.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Images/flèche%20suivant.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
