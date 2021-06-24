@@ -1,0 +1,5 @@
+Clafoutis cerise
+Sucré
+Sucre glace,50.0,cg/Beurre demi-sel,60.0,g/Lait,20.0,cl/Oeufs,4.0,null/Farine,100.0,g/Sucre en poudre,60.0,g/Cerises,600.0,g/Sel,1.0,pincée/Sucre vanillé,1.0,sachet/
+Préchauffez le four à 210°C (thermostat 7). Lavez rapidement les cerises sous un filet d'eau fraîche, équeutez-les et égouttez-les./Faites fondre les 40 g de beurre dans une petite casserole à fond épais. /Mélangez dans un grand bol la farine, le sucre, le sel et le sucre vanillé. /Incorporez les oeufs peu à peu puis le lait petit à petit en continuant de mélanger. Ajoutez le beurre fondu./Beurrez grassement le plat, rangez les cerises puis versez la pâte à clafoutis. Mettez au four pendant 10 mn à 210°C puis baissez à 180°C et cuisez encore 20 mn./Servez le clafoutis froid ou tiède, saupoudré de sucre glace./
+src/Image/Clafoutis cerise.png

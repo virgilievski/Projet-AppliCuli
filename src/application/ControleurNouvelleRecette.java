@@ -135,7 +135,7 @@ public class ControleurNouvelleRecette {
 		   }
 		   else {
 			    try{
-			    	ing.quantite=Integer.parseInt(quantite.getText());
+			    	ing.quantite=Float.parseFloat(quantite.getText());
 			    	this.listIngr.put(ing.nom,ing);
 			    	labelQ.setText("");
 			    	ok = true;

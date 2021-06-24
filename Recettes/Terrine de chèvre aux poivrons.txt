@@ -1,0 +1,5 @@
+Terrine de chèvre aux poivrons
+Salé
+crème épaisse,37.0,cl/fromages de chèvre,650.0,g/Poivrons rouges,2.0,null/Tapenade,130.0,g/Huile d'olive,10.0,cl/
+Préchauffer le four à 180°C (thermostat 6) et mettre les poivrons au four durant 30 minutes./Les sortir et les enfermer dans un sac plastique jusqu'à ce qu'ils soient refroidis./Les peler et ôter les graines./Malaxer la crème et le chèvre./Tapisser un moule de film alimentaire./Confectionner la terrine en alternant les couches de poivron, tapenade et crème de chèvre./Recouvrir de film alimentaire, tasser bien l'ensemble et mettre un poids dessus./Réserver au frais au moins 24 heures avant de servir découpé en tranches./
+src/Image/Terrine de chèvre aux poivrons.png

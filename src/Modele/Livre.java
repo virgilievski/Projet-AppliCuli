@@ -25,7 +25,7 @@ public class Livre {
 	public int nb_recettes;
 	
 	public Livre() {
-		this.dico_recettes= new HashMap();
+		this.dico_recettes= new HashMap<String, Recette>();
 		this.nb_recettes=0;
 		String rep = "Recettes";
 		File file = new File(rep);
@@ -77,7 +77,7 @@ public class Livre {
 	        Ingredient ing = new Ingredient();
 	        String[] part = parts[j].split(",");
 	        ing.nom=part[0];
-	        ing.quantite=Integer.parseInt(part[1]);
+	        ing.quantite=Float.parseFloat(part[1]);
 	        ing.mesure=part[2];
 	        r.list_ingredients.put(ing.nom, ing);
 	        	}
