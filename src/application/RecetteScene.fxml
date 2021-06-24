@@ -5,10 +5,11 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="689.0" stylesheets="@application2.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar layoutY="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
@@ -20,10 +21,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label fx:id="titre" layoutX="82.0" layoutY="56.0" prefHeight="46.0" prefWidth="206.0" textFill="#fdfcfc">
+      <Label fx:id="titre" layoutX="82.0" layoutY="56.0" prefHeight="46.0" prefWidth="206.0" textFill="#464646">
          <font>
-            <Font name="Book Antiqua" size="36.0" />
+            <Font name="Cantarell Bold" size="50.0" />
          </font></Label>
-      <TabPane fx:id="tabPane" layoutX="-1.0" layoutY="192.0" prefHeight="173.0" prefWidth="459.0" tabClosingPolicy="UNAVAILABLE" />
+      <TabPane fx:id="tabPane" layoutX="14.0" layoutY="119.0" prefHeight="173.0" prefWidth="459.0" tabClosingPolicy="UNAVAILABLE" />
+      <ImageView fx:id="image" fitHeight="215.0" fitWidth="289.0" layoutX="473.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
