@@ -77,7 +77,7 @@ public class Livre {
 	        Ingredient ing = new Ingredient();
 	        String[] part = parts[j].split(",");
 	        ing.nom=part[0];
-	        ing.quantite=Integer.parseInt(part[1]);
+	        ing.quantite=Float.parseFloat(part[1]);
 	        ing.mesure=part[2];
 	        r.list_ingredients.put(ing.nom, ing);
 	        	}
