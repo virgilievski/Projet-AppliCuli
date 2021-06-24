@@ -25,9 +25,12 @@
       <Button fx:id="btnrecherche" layoutX="570.0" layoutY="52.0" mnemonicParsing="false" onAction="#setUpRecherche" text="Rechercher" />
       <TableView fx:id="table" layoutY="96.0" onMouseClicked="#clickcell" prefHeight="433.0" prefWidth="663.0">
         <columns>
-            <TableColumn fx:id="tab1" editable="false" prefWidth="418.0" text="Nom" />
+            <TableColumn fx:id="tab1" editable="false" prefWidth="418.0" sortable="false" text="Nom" />
             <TableColumn fx:id="tab2" editable="false" prefWidth="244.0" text="Saveur" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Button fx:id="btnsup" layoutX="86.0" layoutY="52.0" mnemonicParsing="false" onAction="#supprimerRecette" text="Supprimer" visible="false" />
       <Button layoutX="23.0" layoutY="52.0" mnemonicParsing="false" onAction="#nouvelleRecetteScene" text="Nouvelle Recette" />

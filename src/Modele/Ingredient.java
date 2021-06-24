@@ -21,7 +21,14 @@ public class Ingredient {
 	}
 	@Override
 	public String toString() {
-		return this.nom;
+		int a=Math.round(this.quantite);
+		String b=""+this.quantite;
+		if (this.quantite - a==0) {
+			b=""+a;
+			System.out.print("oui");
+		}
+		
+		return this.nom+" "+this.quantite+" "+this.mesure;
 	}
 
 }
