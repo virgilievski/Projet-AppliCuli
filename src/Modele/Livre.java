@@ -25,7 +25,7 @@ public class Livre {
 	public int nb_recettes;
 	
 	public Livre() {
-		this.dico_recettes= new HashMap();
+		this.dico_recettes= new HashMap<String, Recette>();
 		this.nb_recettes=0;
 		String rep = "Recettes";
 		File file = new File(rep);

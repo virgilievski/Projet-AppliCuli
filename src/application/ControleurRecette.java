@@ -17,13 +17,13 @@ import javafx.stage.Stage;
 
 
 public class ControleurRecette  {
-	@FXML private TextField etape;
+	@FXML private Label etapas;
 	@FXML private Label titre;
 	@FXML private ImageView image;
 	@FXML private TextField ingredients;
-	@FXML private Button avant;
-	@FXML private Button apres;
-	@FXML private TabPane tabPane;
+	@FXML private Button suivant;
+	@FXML private Button precedent;
+
 	private Scene accueil;
 	private Scene liste;
 	public ControleurRecette() {
@@ -52,13 +52,11 @@ public class ControleurRecette  {
 		System.out.println(im);
 		image.setImage(im);
 		ArrayList<?> etapes=r.list_etapes;
-		for (int i=0 ; i<etapes.size();i++) {
-			Tab tab1 = new Tab("Etape "+(i+1), new Label((String) etapes.get(i)));
-			tabPane.getTabs().add(tab1);
+		etapas.setText((String) etapes.get(0));
 		}
 	}
 	
-}
+
 
 	
 
