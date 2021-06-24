@@ -48,8 +48,12 @@ public class ControleurRecette  {
 		s.setScene(liste);
 	}
 	public void update(Recette r) {
+
 	
 		titreEtape.setText("Etape"+(a+1)+":");
+
+		int i;
+
 		rec = r;
 		titre.setWrapText(true);
 		titre.setText(r.nom);
@@ -61,6 +65,11 @@ public class ControleurRecette  {
 		ArrayList<?> etapes=r.list_etapes;
 		etapas.setWrapText(true);
 		etapas.setText((String) etapes.get(a));
+		
+		ingredients.setWrapText(true);
+		for(i=0; i<=r.list_ingredients.size(); i++) {
+			ingredients.setText("-"+r.list_ingredients.get(i).nom +" "+ r.list_ingredients.get(i).quantite+" "+ r.list_ingredients.get(i).mesure+ "\n");
+		}
 		}
 	public void suiv(ActionEvent e){
 		titreEtape.setText("Etape"+(a+1)+":");
