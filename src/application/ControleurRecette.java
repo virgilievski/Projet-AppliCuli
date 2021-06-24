@@ -6,17 +6,23 @@ import Modele.Recette;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+
 public class ControleurRecette  {
-	@FXML private Label etape;
+	@FXML private TextField etape;
 	@FXML private Label titre;
 	@FXML private ImageView image;
+	@FXML private TextField ingredients;
+	@FXML private Button avant;
+	@FXML private Button apres;
 	@FXML private TabPane tabPane;
 	private Scene accueil;
 	private Scene liste;
@@ -29,12 +35,12 @@ public class ControleurRecette  {
 		this.liste=b;
 	}
 	public void accueilScene(ActionEvent e) {
-		Stage s =(Stage) tabPane.getScene().getWindow();
+		Stage s =(Stage) image.getScene().getWindow();
 		s.setScene(accueil);
 		
 	}
 	public void listeScene(ActionEvent e) {
-		Stage s =(Stage) tabPane.getScene().getWindow();
+		Stage s =(Stage) image.getScene().getWindow();
 		s.setScene(liste);
 	}
 	public void update(Recette r) {
@@ -51,6 +57,8 @@ public class ControleurRecette  {
 			tabPane.getTabs().add(tab1);
 		}
 	}
-
 	
 }
+
+	
+

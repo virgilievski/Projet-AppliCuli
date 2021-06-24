@@ -6,7 +6,7 @@ public class Ingredient {
 	
 	public String nom;
 	public String mesure;
-	public int quantite;
+	public float quantite;
 	
 	public Ingredient(String n, int q, String m ) {
 		this.nom = n;
