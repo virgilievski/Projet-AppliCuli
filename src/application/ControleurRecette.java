@@ -40,9 +40,10 @@ public class ControleurRecette  {
 	public void update(Recette r) {
 
 		titre.setText(r.nom);
-		File file = new File("src/Image/"+r.photo);
+		File file = new File(r.photo);
 		System.out.println(file.toString());
 		Image im = new Image(file.toURI().toString());
+		System.out.println(im);
 		image.setImage(im);
 		ArrayList<?> etapes=r.list_etapes;
 		for (int i=0 ; i<etapes.size();i++) {
