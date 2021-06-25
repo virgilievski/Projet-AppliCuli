@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -206,11 +207,13 @@ public class ControleurNouvelleRecette {
 				   this.r.list_etapes.add(this.listEtape.get(i));
 			   }
 			   
-			  this.r.list_ingredients=this.listIngr;
-			   //for (Map.Entry mapentry : this.listIngr.entrySet()) {
-				 //  this.r.list_ingredients.put(this.listIngr.get(mapentry).nom,this.listIngr.get(mapentry));
-		                             
-		        }
+			  //this.r.list_ingredients=this.listIngr;
+			   Iterator iterator = listIngr.entrySet().iterator();
+		        while (iterator.hasNext()) {
+		          Map.Entry mapentry = (Map.Entry) iterator.next();
+		          this.r.list_ingredients.put((String) mapentry.getKey(),(Ingredient) mapentry.getValue());
+		                           
+		        } 
 			   for (int i=0; i<this.listIngr.size();i++) {
 				   
 			   }
@@ -237,8 +240,7 @@ public class ControleurNouvelleRecette {
 			   this.livre.ajoutRecette(r);
 			   
 			   this.listEtape.clear();
-			   this.listIngr.clear();
-			   System.out.print(this.livre.dico_recettes.get(this.r.nom).list_etapes);	
+			   this.listIngr.clear();	
 			   this.dragon.setImage(null);
 			   this.r=new Recette();
 			   this.ctrlLR.table.setItems(this.ctrlLR.getRecette());
@@ -246,6 +248,7 @@ public class ControleurNouvelleRecette {
 			   s.setScene(listeRecette);
 		   }   
 	   }
+}
 	   
 	
 

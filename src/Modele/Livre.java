@@ -20,6 +20,7 @@ import java.util.TreeSet;
 
 
 
+
 public class Livre {
 	public HashMap<String,Recette> dico_recettes;
 	public int nb_recettes;
@@ -49,9 +50,6 @@ public class Livre {
 	
 	public void supprimerRecette(Recette r) throws IOException {
 		if (this.dico_recettes.containsKey(r.nom)){
-			System.out.println(Files.deleteIfExists(Paths.get("Recettes/"+r.nom+".txt")));
-			System.out.println(Files.deleteIfExists(Paths.get("src/Image/"+r.nom+".png")));
-			
 			this.dico_recettes.remove(r.nom);
 		}
 	}
