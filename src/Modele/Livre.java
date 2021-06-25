@@ -51,6 +51,13 @@ public class Livre {
 	public void supprimerRecette(Recette r) throws IOException {
 		if (this.dico_recettes.containsKey(r.nom)){
 			this.dico_recettes.remove(r.nom);
+			String rep = "Recettes";
+			File file = new File(rep+"/"+r.nom+".txt");
+			file.delete();
+			File im = new File("src/Image"+r.nom+".png");
+            im.delete();
+			
+			
 		}
 	}
 	
